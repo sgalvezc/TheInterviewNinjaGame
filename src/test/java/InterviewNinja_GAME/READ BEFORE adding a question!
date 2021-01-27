@@ -1,0 +1,18 @@
+wholeQuestionsWithSolutionList.get(i).questionPart = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("]") + 2, interviewQuestions.get(i).indexOf("-"));
+wholeQuestionsWithSolutionList.get(i).solutionPart = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("-") + 2);
+wholeQuestionsWithSolutionList.get(i).time = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("min.") - 2, interviewQuestions.get(i).indexOf("min."));
+wholeQuestionsWithSolutionList.get(i).topic = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("[") + 1, interviewQuestions.get(i).indexOf("]"));
+
+FORMAT IS CRUCIAL!: If format is wrong you will get a StringIndexOutOfBoundsException To avoid this please follow the following rules:
+
+THIS IS THE FORMAT: 
+[TopicGoesHere] 12. The actual question goes here (2min.) - Solution: Solution to the question goes here
+
+
+*Time: MUST HAVE ".". at the end of "min". Else exception..
+
+- FileInputStream: class obtains input bytes from a file. It is used for reading byte oriented data (Streams of raw bytes). You can also read character-stream data.
+
+
+        //NEW GAME MODE 3 (single player)- SET THE TIME YOU WANT..and that sets the time FOR all the QUESTION...
+        //NEW GAME MODE 4 (multiplayer) - HOT SEAT, ALL QUESTION TIMES ARE HALVED.
