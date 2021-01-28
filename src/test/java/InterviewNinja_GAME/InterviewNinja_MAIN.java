@@ -1,7 +1,7 @@
 package InterviewNinja_GAME;
 
 /*
-@Authors: Daniel Vanshtein & Steph Galvez
+@Authors: Daniel Vanshtein and Steph Galvez
  */
 
 //EXPECTED RELEASE DATE: 02/01/21**********************
@@ -16,9 +16,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class InterviewNinja_MAIN {
@@ -176,9 +174,6 @@ person's turn.
 
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
 
-        int a = 8;
-        int b = 7;
-
 
         //Try & Catch exception added in the case "file1" path is lost
         try {
@@ -240,9 +235,24 @@ person's turn.
         //Customizes the output message for style of game the user chose to play
         System.out.print(">̶ Style Number: ");
         int typeOfGame = scan.nextInt();
-        String styleChosen = "";
-        styleChosen = (typeOfGame == 1) ? "ROUND ROBIN STYLE" : "TOPIC BASED STYLE";
-        System.out.println("\n>̶ You have chosen " + styleChosen);
+        if (typeOfGame != 69) {//too not print this in case we are accessing admin settings
+            String styleChosen = "";
+            styleChosen = (typeOfGame == 1) ? "ROUND ROBIN STYLE" : "TOPIC BASED STYLE";
+            System.out.println("\n>̶ You have chosen " + styleChosen);
+        }
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        if (typeOfGame == 69) { //secret admin access. Runs the adminStatistics Method
+            try {
+                FileInputStream file2 = new FileInputStream("src/test/java/InterviewNinja_GAME/Questions.txt");
+                adminStatistics(file2); // method to populate an array with all the questions from Questions.txt
+            } catch (FileNotFoundException e) {
+                System.err.println("File path is wrong dude, Go To File1 and Change its path! I wont Load the questions/program till you change it");
+                System.exit(0);
+            }
+            System.exit(0);
+        }
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
         //*********************************************************
         //=========================================================
@@ -250,10 +260,9 @@ person's turn.
         //Player selection custom method call
         playersSelection();
 
+
         //*********************************************************
         //=========================================================
-
-
         //If conditions(1 of 2) implemented to move throughout the different game styles according to player's selection.
         if (typeOfGame == 1) {
 
@@ -445,5 +454,112 @@ person's turn.
 
     }
 //TODO Add settings to each style.
+
+    public static void adminStatistics(FileInputStream file1) {
+        List<QuestionAndSolution> javaTopicList = new ArrayList<>();
+        List<QuestionAndSolution> SSTopicList = new ArrayList<>();
+        List<QuestionAndSolution> TQTopicList = new ArrayList<>();
+        List<QuestionAndSolution> JiraTopicList = new ArrayList<>();
+        List<QuestionAndSolution> SeleniumTopicList = new ArrayList<>();
+        List<QuestionAndSolution> GHTopicList = new ArrayList<>();
+
+        List<QuestionAndSolution> timerList = new ArrayList<>();
+
+
+        populateQuestionList(file1);
+        for (QuestionAndSolution eachWholeQuestion : wholeQuestionsWithSolutionList) {
+            if (eachWholeQuestion.topic.equals("Java")) {
+                javaTopicList.add(eachWholeQuestion);
+            }
+        }
+
+        wholeQuestionsWithSolutionList.forEach(p -> {
+            if (p.topic.equals("SS")) SSTopicList.add(p);
+        });
+        wholeQuestionsWithSolutionList.forEach(p -> {
+            if (p.topic.equals("TQ")) TQTopicList.add(p);
+        });
+        wholeQuestionsWithSolutionList.forEach(p -> {
+            if (p.topic.equals("Jira")) JiraTopicList.add(p);
+        });
+        wholeQuestionsWithSolutionList.forEach(p -> {
+            if (p.topic.equals("Selenium")) SeleniumTopicList.add(p);
+        });
+        wholeQuestionsWithSolutionList.forEach(p -> {
+            if (p.topic.equals("GH")) GHTopicList.add(p);
+        });
+
+        System.out.println();
+        System.out.println("**************************************");
+        System.out.println("Java Questions: " + javaTopicList.size() + " questions");
+        System.out.println("SoftSkill Questions: " + SSTopicList.size() + " questions");
+        System.out.println("TQ Questions: " + TQTopicList.size() + " questions");
+        System.out.println("Jira Questions: " + JiraTopicList.size() + " questions");
+        System.out.println("Selenium Questions: " + SeleniumTopicList.size() + " questions");
+        System.out.println("GitHub Questions: " + GHTopicList.size() + " questions");
+        System.out.println("**************************************");
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println();
+        System.out.println("What would you like to do?");
+        System.out.println("[1] > Print out the questions for a certain topic");
+        System.out.println("[2] > Remove a topic from the game");
+        System.out.println("[3] > EXIT ADMIN");
+        System.out.print("INPUT: ");
+        int input = sc.nextInt();
+
+        if (input == 1) {
+            System.out.println();
+            System.out.println("======================================");
+            System.out.println("Which topic questions would you like to see?");
+            System.out.println("[1] Java");
+            System.out.println("[2] Soft-Skill");
+            System.out.println("[3] Technical - Java");
+            System.out.println("[4] Jira");
+            System.out.println("[5] Selenium");
+            System.out.println("[6] Git Hub");
+            System.out.print("INPUT: ");
+            input = sc.nextInt();
+
+            System.out.println();
+            if ((input == 1)) {
+
+                javaTopicList.forEach(p ->
+                        System.out.println(p.questionPart));
+            } else {
+                if ((input == 2)) {
+                    SSTopicList.forEach(p ->
+                            System.out.println(p.questionPart));
+                } else {
+                    if ((input == 3)) {
+                        TQTopicList.forEach(p ->
+                                System.out.println(p.questionPart));
+                    } else {
+                        if ((input == 4)) {
+                            JiraTopicList.forEach(p ->
+                                    System.out.println(p.questionPart));
+                        } else {
+                            if ((input == 5)) {
+                                SeleniumTopicList.forEach(p ->
+                                        System.out.println(p.questionPart));
+                            } else {
+                                GHTopicList.forEach(p ->
+                                        System.out.println(p.questionPart));
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        //todo code input 2 (Remove a Topic From the Game then continue the game) - Daniel
+        if (input == 3 || input == 2) { // for now we included 2 in here because we havent coded this option yet
+            return;
+        }
+
+
+    }
+
 
 }
