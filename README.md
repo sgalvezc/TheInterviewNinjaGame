@@ -1,5 +1,5 @@
 # InterviewNinja
-#Version - 1.0
+## Version - 1.0
 
 Hello World, Welcome to the Ultimate Interview Preperation Game...approach with Caution!
 
