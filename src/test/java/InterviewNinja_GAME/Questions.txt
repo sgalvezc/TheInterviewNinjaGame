@@ -90,8 +90,3 @@
 [Java] 90. What is difference between stack and heap? (2 min.) - Solution: Both are used for memory but have different purposes. Stack: Stores primitives, method calls, and references; Heap: Stores the objects themselves. The String pool is also in the heap.
 [Java] 91. What are Wrapper classes? (2 min.) - Solution: Wrapper classes are object representations of primitive datatypes. These classes are needed to be able to store primitive like data in collections such as ArrayList. These wrapper classes also have useful utility methods.
 [SS] 92. What did you talk about in your last retro meeting? Give an Example Please... (5 min.) - Solution: What went well during the last sprint / What didnt go well during the last sprint / How can we improve for the next sprint
-
-
-
-
-

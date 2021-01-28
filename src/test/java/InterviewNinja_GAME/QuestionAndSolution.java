@@ -7,7 +7,7 @@ public class QuestionAndSolution {
 
     public String questionPart, solutionPart;
     public String time;
-    public String topic;
+    public String topic = ""; // Had to initialize her otherwise i get a NullExceptionError later
 
 
 

@@ -232,6 +232,8 @@ person's turn.
 
         System.out.println();
 
+//todo think about changing input from int to String so we can type ADMIN for adminSettings
+
         //Customizes the output message for style of game the user chose to play
         System.out.print(">̶ Style Number: ");
         int typeOfGame = scan.nextInt();
