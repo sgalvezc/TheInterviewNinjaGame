@@ -6,12 +6,11 @@ package InterviewNinja_GAME;
 
 //EXPECTED RELEASE DATE: 02/01/21**********************
 
+import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.json.JsonOutput;
 import org.openqa.selenium.support.ui.Select;
 
 import java.io.FileInputStream;
@@ -26,9 +25,13 @@ public class InterviewNinja_MAIN {
     //Custom class object array created
     //Located in the "MAIN" class for accessibility
 
+
     //Custom class object array created ---> Located in the "MAIN" class for accessibility ---> Specifier: static. One copy needed for all the classes.
     public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>();
 
+    public static ArrayList<String> playerNames = new ArrayList<>();
+
+    //todo DASHA EXPLANATION POSSIBLY
     //Custom method with "FileInputStream" parameter
     public static void populateQuestionList(FileInputStream file1) {
         //Scanner object to read from "file1" instead of "System.in"
@@ -53,8 +56,10 @@ public class InterviewNinja_MAIN {
 
 
     //PART II - The timer setup
+    //todo Daniel Presentation
+    public static void questionAndTimeWindowSetup(String questionText, String playerNames, String time) throws InterruptedException {
 
-    public static void questionAndTimeWindowSetup(String str, String time) throws InterruptedException {
+        String questionTextAndPlayerName = playerNames + "..." + questionText; // for adding player name
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver1 = new ChromeDriver();
@@ -67,9 +72,15 @@ public class InterviewNinja_MAIN {
         //=================================================================================
         //TYPEWRITER STARTS
         //=================================================================================
-        for (int i = 0; i < str.length(); i++) {
-            String eachChar = str.charAt(i) + "";
+        for (int i = 0; i < questionTextAndPlayerName.length(); i++) {
+            String eachChar = questionTextAndPlayerName.charAt(i) + "";
+            //todo - 01/29 - talk about whether number shud be in the question or not - DANIEL STEPH DASHA ***********
             driver1.findElement(By.name("questionText")).sendKeys((eachChar));
+            if (i == playerNames.length()+2) {
+                //2 enters so I make a space in between
+                driver1.findElement(By.name("questionText")).sendKeys((Keys.ENTER));//making a next line once the name is done printing
+                driver1.findElement(By.name("questionText")).sendKeys((Keys.ENTER));//making a next line once the name is done printing
+            }
             try {
                 Thread.sleep(150);
             } catch (InterruptedException e) {
@@ -121,12 +132,13 @@ public class InterviewNinja_MAIN {
     //Todo add an "about me" part in this game somewhere - Daniel
     //PART III - Player selection setup
     /*
-TODO ADD PEOPLE SO THAT WE CAN KNOW THE ORDER OF THE PEOPLE WHO WILL GO. - Steph start the new custom class for people. Daniel work on it after.
+
 So in RoundRobin, if there are 5 players, we want to enter everyone names and then prompt the name later in the game when its that
 person's turn.
  */
+    //todo Steph Presentation
     //Custom method created to develop the player's selection
-    public static void playersSelection() {
+    public static ArrayList<String> playersSelection() {
 
         //ArrayList created to add the name of the players
         ArrayList<String> playersNames = new ArrayList<>();
@@ -137,39 +149,46 @@ person's turn.
         //Random object created to make random selection from the ArrayList
         Random rand3 = new Random();
 
-        System.out.println("\tHow many players?");
+        System.out.print(">̶ How many players? - ");
         int players = scan.nextInt();
         int count = 0;
 
         //For loop used to iterate throughout the number of players entered by user.
         // With the conditions inside the loop, it will be determined if player's name need to be entered
         for (int i = 0; i < players; i++) {
-            if (players == 1) {
-                System.out.println("You are playing SOLO");
-                continue;
-            } else {
-                count++;
-                System.out.println("Enter player " + count + " name");
-                String playerName = scan.next();
-                playersNames.add(playerName);
-            }
+            count++;
+            System.out.print("Enter player " + count + " name:");
+            String playerName = scan.next();
+            playersNames.add(playerName);
         }
 
-        System.out.println("\tPlayers order will be as follow: ");
+
+        System.out.print("\n>̶ Players order will be as follows: ");
 
         //While loop used to iterate throughout the playersNames ArrayList. The loop will run as long the list is not empty
         //In this loop the random variable will be initialized and it will pick name randomly from the playersName ArrayList.
         //The name picked will be added to the tempPlayersName ArrayList
         while (!playersNames.isEmpty()) {
             int randName = rand3.nextInt(playersNames.size());
-            tempPlayersNames.add(playersNames.get(randName));
+
+            String color = new Faker().color().name();
+            color = color.substring(0, 1).toUpperCase() + color.substring(1);
+
+            String animalName = new Faker().animal().name(); // created faker and made it return a string "name" of the animal. Otherwise its a hashCode
+            animalName = animalName.substring(0, 1).toUpperCase() + animalName.substring(1);//making the animal name capital
+
+            tempPlayersNames.add(playersNames.get(randName) + " the " + color + " " + animalName);
             playersNames.remove(randName);
         }
-        System.out.println(tempPlayersNames);
+
+//todo Edit the print format of the names in the list instead of brackets - Steph
+//todo make it so that it returns the randomName list and then prints the playerName(plus a funny animal name like Kahoot) in the questionWindow - Daniel
+
+        return tempPlayersNames;
     }
 
 
-    //PART IV - Game setup
+//PART IV - Game setup
 
 
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
@@ -240,7 +259,7 @@ person's turn.
         if (typeOfGame != 69) {//too not print this in case we are accessing admin settings
             String styleChosen = "";
             styleChosen = (typeOfGame == 1) ? "ROUND ROBIN STYLE" : "TOPIC BASED STYLE";
-            System.out.println("\n>̶ You have chosen " + styleChosen);
+            System.out.println("\n>̶ You have chosen: " + styleChosen);
         }
         //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         if (typeOfGame == 69) { //secret admin access. Runs the adminStatistics Method
@@ -260,7 +279,10 @@ person's turn.
         //=========================================================
 
         //Player selection custom method call
-        playersSelection();
+        //todo- Steph review this new changes
+        playerNames = playersSelection(); // playerNames is a global ArrayList<String>
+        System.out.print(playerNames);
+        System.out.println();
 
 
         //*********************************************************
@@ -268,20 +290,26 @@ person's turn.
         //If conditions(1 of 2) implemented to move throughout the different game styles according to player's selection.
         if (typeOfGame == 1) {
 
-            roundRobin:
+
             //While loop implemented. It will run the game as long player selects to do so.
-            while (true) {
+            int j = 0;
+
+            roundRobin:
+            while (j < playerNames.size()) {
 
                 //Random object created to randomly select a question from the wholeQuestionSolutionList ArrayList
                 Random rand = new Random();
+
 
                 //For loop implemented to control the number of questions printed out
                 for (int i = 0; i < 1; i++) {
 
                     //Initializing a random number using our RandomClass object "rand"
                     int randInt = rand.nextInt(wholeQuestionsWithSolutionList.size());
+
+
                     wholeQuestionsWithSolutionList.get(randInt).questionAnswered();
-                    questionAndTimeWindowSetup(wholeQuestionsWithSolutionList.get(randInt).questionPart, wholeQuestionsWithSolutionList.get(randInt).time); // RUNS
+                    questionAndTimeWindowSetup(wholeQuestionsWithSolutionList.get(randInt).questionPart, playerNames.get(j), wholeQuestionsWithSolutionList.get(randInt).time); // RUNS
                     // TODO Make it come out with a typeWriter effect, use a diff method with an, arrayList, for loop and sleep..make the sum of the milliseconds open the second window
 
 //TODO task = NEED TO CHANGE THIS STATEMENT BELOW TO PREDICATE FORM! - Steph (DONE DONE DONE)
@@ -306,6 +334,13 @@ person's turn.
 
                     System.out.println("===================================================================================================================================================");
                 }
+                //todo - 01/29 - REVIEW WITH STEPH ABOUT THIS IF CONDITION. IT IS TO MAKE THE PLAYERNAME LIST GO IN A CIRCLE-IRKLE -DANIEL+STEPH*********
+                if ((j == playerNames.size() - 1)) {
+                    j = 0;
+                } else {
+                    j++;
+                }
+
 
                 //If condition implemented to notify player if there are no more questions in the ArrayList
                 if (wholeQuestionsWithSolutionList.isEmpty()) {
@@ -333,6 +368,7 @@ person's turn.
                 */
             }
         }
+
 //todo add a countdown of how many questions are left of each topic and then the topic they choose count the number of questions as well - Steph
 
         //If conditions(2 of 2) implemented to move throughout the different game styles according to player's selection.
@@ -340,9 +376,10 @@ person's turn.
             System.out.println("===================================================================================================================================================");
             System.out.println("WELCOME TO INTERVIEW NINJA - TOPIC!\n");
 
+            int i = 0;
             gameMenu:
             //While loop implemented. It will run the game as long player selects to do so.
-            while (true) {
+            while (i < playerNames.size()) {
 
                 System.out.println(">̶ Select topic to be quizzed on:");
                 System.out.println("[1] Soft Skills");
@@ -410,26 +447,36 @@ person's turn.
                 for (int j = 0; j < topicQuestionsWithSolutionList.size(); j++) {
 
                     //Initializing a random number using our RandomClass object "randTopic"
-                    int randTopic = rand2.nextInt(topicQuestionsWithSolutionList.size());
-                    topicQuestionsWithSolutionList.get(randTopic).questionAnswered();
-                    questionAndTimeWindowSetup(topicQuestionsWithSolutionList.get(randTopic).questionPart, topicQuestionsWithSolutionList.get(randTopic).time);
+                    int randNumber = rand2.nextInt(topicQuestionsWithSolutionList.size());
+                    //in case the size is 1 so the first index is 0 and will stay 0
+
+
+                    topicQuestionsWithSolutionList.get(randNumber).questionAnswered();
+                    questionAndTimeWindowSetup(topicQuestionsWithSolutionList.get(randNumber).questionPart, playerNames.get(i), topicQuestionsWithSolutionList.get(randNumber).time);
 
 
                     System.out.println("===================================================================================================================================================");
 
                     //Prints the question
-                    System.out.println(topicQuestionsWithSolutionList.get(randTopic).questionPart);
+                    System.out.println(topicQuestionsWithSolutionList.get(randNumber).questionPart);
                     //Prints out the solution
-                    System.out.println(topicQuestionsWithSolutionList.get(randTopic).solutionPart);
+                    System.out.println(topicQuestionsWithSolutionList.get(randNumber).solutionPart);
 
                     System.out.println("===================================================================================================================================================");
 
                     //If condition implemented to to discard questions already picked and removed from ArrayList
-                    if (topicQuestionsWithSolutionList.get(randTopic).isSolvedCount >= 1) {
-                        topicQuestionsWithSolutionList.remove(topicQuestionsWithSolutionList.get(randTopic));
+                    if (topicQuestionsWithSolutionList.get(randNumber).isSolvedCount >= 1) {
+                        topicQuestionsWithSolutionList.remove(topicQuestionsWithSolutionList.get(randNumber));
                         j--;
                     }
+                    //todo - 01/29 - REVIEW WITH STEPH ABOUT THIS IF CONDITION. IT IS TO MAKE THE PLAYERNAME LIST GO IN A CIRCLE-IRKLE -DANIEL+STEPH*********
+                    if ((i == playerNames.size() - 1)) {
+                        i = 0;
+                    } else {
+                        i++;
+                    }
                 }
+
                 //TODO Talk about what to do about prompting user or add time between questions or maybe a countdown or gives a setAmount of questions before prompting - DECIDE ON DEFAULT SETTINGS(topic based style)
 
                 //If condition implemented to to let player know that topic ArrayList is empty
@@ -455,6 +502,8 @@ person's turn.
         }
 
     }
+
+
 //TODO Add settings to each style.
 
     public static void adminStatistics(FileInputStream file1) {
