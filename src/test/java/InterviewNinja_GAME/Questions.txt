@@ -90,3 +90,24 @@
 [Java] 90. What is difference between stack and heap? (2 min.) - Solution: Both are used for memory but have different purposes. Stack: Stores primitives, method calls, and references; Heap: Stores the objects themselves. The String pool is also in the heap.
 [Java] 91. What are Wrapper classes? (2 min.) - Solution: Wrapper classes are object representations of primitive datatypes. These classes are needed to be able to store primitive like data in collections such as ArrayList. These wrapper classes also have useful utility methods.
 [SS] 92. What did you talk about in your last retro meeting? Give an Example Please... (5 min.) - Solution: What went well during the last sprint / What didnt go well during the last sprint / How can we improve for the next sprint
+[SS] 93. Have you work under pressure? (5 min.) - Solution:
+[SS] 94. Where do you see yourself 5 years from now? (5 min.) - Solution:
+[SS] 95. Why did you choose software quality analyst as a profession/ career? (5 min.) - Solution:
+[SS] 96. Why should we hire you? (5 min.) - Solution:
+[SS] 97. What is smoke testing? (5 min.) - Solution:
+[SS] 98. What is parking lot? (5 min.) - Solution:
+[SS] 99. What is the difference between system testing and integration testing? (5 min.) - Solution:
+[SS] 100. What is a negative test case? (5 min.) - Solution:
+[SS] 101. What are the roles and responsibilities of a tester or a QA engineer? (5 min.) - Solution:
+[SS] 102. What constitutes a test case? (5 min.) - Solution:
+[Selenium] 103. How do you locate dynamic web element? (5 min.) - Solution:
+[Selenium] 104. In how many ways you can write an XPath to locate dynamic web element? (5 min.) - Solution:
+[SS] 105. Where do you get your test data from? (5 min.) - Solution:
+[Selenium] 106. How do you switch between browser's tabs using Selenium? (5 min.) - Solution:
+[Selenium] 107. What dependencies do you use in your framework? (5 min.) - Solution:
+[Selenium] 108. What is Selenium Web driver as you mentioned it in your resume? (5 min.) - Solution:
+[Selenium] 109. TestNG annotations and why we use them? (5 min.) - Solution:
+[Java] 109. How to call one constructor from the other constructor? (5 min.) - Solution:
+[Java] 110. What is super keyword in java? (5 min.) - Solution:
+[Java] 111. What is an object? (5 min.) - Solution: Object is an instance of a class
+[Java] 112. What is class in java? (5 min.) - Solution: Class is like an object constructor, ir a "blueprint" for creating objects
