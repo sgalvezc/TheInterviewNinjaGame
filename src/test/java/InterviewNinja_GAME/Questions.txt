@@ -28,7 +28,7 @@
 [GH] 28. What are some Git commands? (2 min.) - Solution: Pull, Commit, Push
 [GH] 29. What is Remote & Local Repository? (2 min.) - Solution: Local repo is the repo on your local hard drive. The remote repo is literally a cloud thats connected to a server that connected to GitHub.com. THIS IS NOT A GREAT ANSWER.
 [Jira] 30. How do you automate a Test Case from Jira? (3 min.) - Solution: User Story -> AC -> Test Case(Manual and/or Automated) -> Test Execution
-[SS] 31. What is Boundary Value Analyze (BVA) (2 min.) - Solution: NOOOOOOOOOOOOOOO. Im not answering this for the 100th time
+[SS] 31. What is Boundary Value Analysis (BVA) (2 min.) - Solution: Boundary testing is the process of testing between extreme ends or boundaries between partitions of the input values. So these extreme ends like Start End, Lower  Upper, Maximum Minimum, Just Inside Just Outside values are called boundary values and the testing is called "boundary testing".
 [Jira] 32.What is a bug and How do you create a bug ticket? (3 min.) - Solution: A bug is a defect found while doing a test execution. It can be reported through the comments of the specific step in the test execution or a Bug issue can be created on Jira linked to that specific step of the test execution
 [SS] 33. What is a Test Case? (2 min.) - Solution: It is a document that explains the steps needed to manually or automatically test the Acceptance Criteria.
 [Java] 34. Can you explain the different types of Access Modifiers? (3 min.) - Solution: Public(Global/Project Visibility), Protected(Package and Subclass Visibility), Default(Package Visibility), Private(Class Visibility)
@@ -94,20 +94,39 @@
 [SS] 94. Where do you see yourself 5 years from now? (5 min.) - Solution:
 [SS] 95. Why did you choose software quality analyst as a profession/ career? (5 min.) - Solution:
 [SS] 96. Why should we hire you? (5 min.) - Solution:
-[SS] 97. What is smoke testing? (5 min.) - Solution:
-[SS] 98. What is parking lot? (5 min.) - Solution:
-[SS] 99. What is the difference between system testing and integration testing? (5 min.) - Solution:
-[SS] 100. What is a negative test case? (5 min.) - Solution:
-[SS] 101. What are the roles and responsibilities of a tester or a QA engineer? (5 min.) - Solution:
-[SS] 102. What constitutes a test case? (5 min.) - Solution:
-[Selenium] 103. How do you locate dynamic web element? (5 min.) - Solution:
-[Selenium] 104. In how many ways you can write an XPath to locate dynamic web element? (5 min.) - Solution:
-[SS] 105. Where do you get your test data from? (5 min.) - Solution:
-[Selenium] 106. How do you switch between browser's tabs using Selenium? (5 min.) - Solution:
+[SS] 97. What is smoke testing? (3 min.) - Solution:
+[SS] 98. What is parking lot? (2 min.) - Solution:
+[SS] 99. What is the difference between system testing and integration testing? (3 min.) - Solution:
+[SS] 100. What is a negative test case? (3 min.) - Solution:
+[SS] 101. What are the roles and responsibilities of a tester or a QA engineer? (3 min.) - Solution:
+[SS] 102. What constitutes a test case? (3 min.) - Solution:
+[Selenium] 103. How do you locate dynamic web element? (3 min.) - Solution:
+[Selenium] 104. In how many ways you can write an XPath to locate dynamic web element? (3 min.) - Solution:
+[SS] 105. Where do you get your test data from? (2 min.) - Solution:
+[Selenium] 106. How do you switch between browser's tabs using Selenium? (3 min.) - Solution:
 [Selenium] 107. What dependencies do you use in your framework? (5 min.) - Solution:
-[Selenium] 108. What is Selenium Web driver as you mentioned it in your resume? (5 min.) - Solution:
-[Selenium] 109. TestNG annotations and why we use them? (5 min.) - Solution:
-[Java] 109. How to call one constructor from the other constructor? (5 min.) - Solution:
-[Java] 110. What is super keyword in java? (5 min.) - Solution:
-[Java] 111. What is an object? (5 min.) - Solution: Object is an instance of a class
-[Java] 112. What is class in java? (5 min.) - Solution: Class is like an object constructor, ir a "blueprint" for creating objects
+[Selenium] 108. What is Selenium Web driver as you mentioned it in your resume? (3 min.) - Solution:
+[Selenium] 109. What is TestNG annotations and why we use them? (3 min.) - Solution:
+[Java] 109. How to call one constructor from the other constructor? (2 min.) - Solution:
+[Java] 110. What is super keyword in java? (1 min.) - Solution:
+[Java] 111. What is an object? (1 min.) - Solution: Object is an instance of a class
+[Java] 112. What is class in java? (1 min.) - Solution: Class is like an object constructor, ir a "blueprint" for creating objects
+[GH] 113. What is pull request? (2 min.) - Solution: Pull requests let you tell others about changes you've pushed to a branch in a repository on GitHub. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow up commits before your changes are merged into the base branch.
+[GH] 114. What is a conflict in Git/Git Hub? (3 min.) - Solution: A conflict arises when two separate branches have made edits to the same line in a file, or when a file has been deleted in one branch but edited in the other. Conflicts will most likely happen when working in a team environment. There are many tools to help resolve merge conflicts.
+[GH] 115. How can you resolve a conflict in Git Hub? (3 min.) - Solution: 1. Under your repository name, click "Pull requests" 2. In the "Pull Requests" list, click the pull request with a merge conflict that you'd like to resolve 3. Near the bottom of your pull request, click "Resolve conflicts" 4. Decide if you want to keep only your branch's changes, keep only the other branch's changes, or make a brand new change, which may incorporate changes from both branches 5. If you have more than one merge conflict in your file, scroll down to the next set of conflict markers and repeat steps four and five to resolve your merge conflict 6. Once you've resolved all your merge conflicts, click "Commit merge". This merges the entire base branch into your head branch
+[GH] 116. What is Git and why it is used? (3 min.) - Solution: Git is the most commonly used version control system. Git tracks the changes you make to files, so you have a record of what has been done, and you can revert to specific versions should you ever need to. Git also makes collaboration easier, allowing changes by multiple people to all be merged into one source.
+[GH] 117. What is fetch? (2 min.) - Solution: Fetch gets the latest updates from origin but doesn't update your local working copy with the changes. After you click Fetch origin, the button changes to Pull Origin. Click Pull Origin to update your local working copy with the fetched updates.
+[GH] 118. What is a branch? (2 min.) - Solution: A branch is essentially is a unique set of code changes with a unique name. Each repository can have one or more branches. The main branch is the one where all changes eventually get merged back into, and is called master.
+[GH] 119. What is fork and clone in git? (2 min.) - Solution: When you fork a repository, you create a copy of the original repository (upstream repository) but the repository remains on your GitHub account. Whereas, when you clone a repository, the repository is copied on to your local machine with the help of Git.
+[SS] 120. How do you choose automated testing over manual testing? (3 min.) - Solution:
+[SS] 121. Can you explain the advantages and disadvantages of automation? (3 min.) - Solution:
+[GH] 122. What are the benefits of using Version Control System? (3 min.) - Solution: 1. With the Version Control System(VCS), all the team members are allowed to work freely on any file at any time. VCS gives you the flexibility to merge all the changes into a common version. 2. All the previous versions and variants are neatly packed up inside the VCS. You can request any version at any time as per your requirement and you’ll have a snapshot of the complete project right at hand. 3. Whenever you save a new version of your project, your VCS requires you to provide a short description of the changes that you have made. Additionally, you can see what changes are made in the file’s content. This helps you to know what changes have been made in the project and by whom. 4. A distributed VCS like Git allows all the team members to have a complete history of the project so if there is a breakdown in the central server you can use any of your teammate’s local Git repository.
+[GH] 123. How do you revert a commit that has already been pushed and made public? (2 min.) - Solution: 1. Remove or fix the bad file in a new commit and then push it to the remote repository. This is the most obvious way to fix an error. Once you have made necessary changes to the file, then commit it to the remote repository 2.Also, you can create a new commit that undoes all changes that were made in the bad commit. To do this use the command
+[GH] 124. What is staging area or index? (2 min.) - Solution: That before completing the commits, it can be formatted and reviewed in an intermediate area known as ‘Staging Area’ or ‘Index’.
+[GH] 125. Describe the branching strategies you have used. (3 min.) - Solution: In the end tell them that branching strategies vary from one organization to another so I know basic branching operations like delete, merge, checking out a branch, etc.  1. Feature branching: A feature branch model keeps all of the changes for a particular feature inside of a branch. When the feature is fully tested and validated by automated tests, the branch is then merged into master. 2. Task branching: In this model, each task is implemented on its own branch with the task key included in the branch name. It is easy to see which code implements which task, just look for the task key in the branch name. 3. Release branching: Once the develop branch has acquired enough features for a release, you can clone that branch to form a Release branch. Creating this branch starts the next release cycle, so no new features can be added after this point, only bug fixes, documentation generation, and other release-oriented tasks should go in this branch. Once it is ready to ship, the release gets merged into master and tagged with a version number. In addition, it should be merged back into the develop branch, which may have progressed since the release was initiated.
+[GH] 126. What is HEAD? (1 min.) - Solution: HEAD is used to refer to the last commit in the currently checked-out branch.
+[GH] 127. What is the difference between rebasing and merge in Git? (3 min.) - Solution: In Git, the rebase command is used to integrate changes from one branch into another. It is an alternative to the “merge” command. The difference between rebasing and merge is that rebase rewrites the commit history in order to produce a straight, linear succession of commits. Merging is Git’s way of putting a forked history back together again. The git merge command helps you take the independent lines of development created by git branch and integrate them into a single branch.
+
+
+
+

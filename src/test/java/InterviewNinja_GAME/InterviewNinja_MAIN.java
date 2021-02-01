@@ -261,19 +261,32 @@ public class InterviewNinja_MAIN {
         //=========================================================
 
         System.out.println();
+        //*********************************************************
+        //=========================================================
 
-//TODO think about changing input from int to String so we can type ADMIN for adminSettings
+        //TODO Add description to this ADMIN option ---> DANIEL
+        //TODO if player chooses ADMIN and decides that no changes are needed (EXIT is selected),  can we make the player return to the main menu, instead of exiting the game? --->DANIEL
+        System.out.println("\n\n\n\t[ADMIN] Administrator Settings");
+        /*
+        Administrator Settings Explanation:
+        1. Presents player(s) with admin statistics
+        2.
+        3.
+         */
+        //*********************************************************
+        //=========================================================
+
 
         //Customizes the output message for style of game the user chose to play
         System.out.print(">̶ Style Number: ");
-        int typeOfGame = scan.nextInt();
-        if (typeOfGame != 69) {//too not print this in case we are accessing admin settings
+        String typeOfGame = scan.next();
+        if (!typeOfGame.equalsIgnoreCase("ADMIN")) {//too not print this in case we are accessing admin settings
             String styleChosen = "";
-            styleChosen = (typeOfGame == 1) ? "ROUND ROBIN STYLE" : "TOPIC BASED STYLE";
+            styleChosen = (typeOfGame.equals("1")) ? "ROUND ROBIN STYLE" : "TOPIC BASED STYLE";
             System.out.println("\n>̶ You have chosen: " + styleChosen);
         }
         //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        if (typeOfGame == 69) { //secret admin access. Runs the adminStatistics Method
+        if (typeOfGame.equalsIgnoreCase("ADMIN")) { //secret admin access. Runs the adminStatistics Method
             try {
                 FileInputStream file2 = new FileInputStream("src/test/java/InterviewNinja_GAME/Questions.txt");
                 adminStatistics(file2); // method to populate an array with all the questions from Questions.txt
@@ -298,7 +311,7 @@ public class InterviewNinja_MAIN {
         //*********************************************************
         //=========================================================
         //If conditions(1 of 2) implemented to move throughout the different game styles according to player's selection.
-        if (typeOfGame == 1) {
+        if (typeOfGame.equals("1")) {
 
 
             //While loop implemented. It will run the game as long player selects to do so.
@@ -371,7 +384,7 @@ public class InterviewNinja_MAIN {
         }
 
         //If conditions(2 of 2) implemented to move throughout the different game styles according to player's selection.
-        if (typeOfGame == 2) {
+        if (typeOfGame.equals("2")) {
             System.out.println("===================================================================================================================================================");
             System.out.println("WELCOME TO INTERVIEW NINJA - TOPIC!\n");
 
