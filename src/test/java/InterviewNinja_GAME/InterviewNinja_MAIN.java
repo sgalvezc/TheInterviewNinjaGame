@@ -31,7 +31,7 @@ public class InterviewNinja_MAIN {
 
     public static ArrayList<String> playerNames = new ArrayList<>();
 
-    //todo DASHA EXPLANATION POSSIBLY
+    //TODO DASHA EXPLANATION POSSIBLY
     //Custom method with "FileInputStream" parameter
     public static void populateQuestionList(FileInputStream file1) {
         //Scanner object to read from "file1" instead of "System.in"
@@ -56,7 +56,7 @@ public class InterviewNinja_MAIN {
 
 
     //PART II - The timer setup
-    //todo Daniel Presentation
+    //TODO Daniel Presentation
     public static void questionAndTimeWindowSetup(String questionText, String playerNames, String time) throws InterruptedException {
 
         String questionTextAndPlayerName = playerNames + "..." + questionText; // for adding player name
@@ -74,9 +74,9 @@ public class InterviewNinja_MAIN {
         //=================================================================================
         for (int i = 0; i < questionTextAndPlayerName.length(); i++) {
             String eachChar = questionTextAndPlayerName.charAt(i) + "";
-            //todo - 01/29 - talk about whether number shud be in the question or not - DANIEL STEPH DASHA ***********
+            //TODO - 01/29 - talk about whether number should be in the question or not - DANIEL STEPH DASHA ***********
             driver1.findElement(By.name("questionText")).sendKeys((eachChar));
-            if (i == playerNames.length()+2) {
+            if (i == playerNames.length() + 2) {
                 //2 enters so I make a space in between
                 driver1.findElement(By.name("questionText")).sendKeys((Keys.ENTER));//making a next line once the name is done printing
                 driver1.findElement(By.name("questionText")).sendKeys((Keys.ENTER));//making a next line once the name is done printing
@@ -129,20 +129,18 @@ public class InterviewNinja_MAIN {
         driver1.quit();
     }
 
-    //Todo add an "about me" part in this game somewhere - Daniel
-    //PART III - Player selection setup
-    /*
+    //TODO add an "about me" part in this game somewhere - Daniel
 
-So in RoundRobin, if there are 5 players, we want to enter everyone names and then prompt the name later in the game when its that
-person's turn.
- */
-    //todo Steph Presentation
+
+    //PART III - Player selection setup
+    //TODO Steph Presentation
+
     //Custom method created to develop the player's selection
     public static ArrayList<String> playersSelection() {
 
         //ArrayList created to add the name of the players
         ArrayList<String> playersNames = new ArrayList<>();
-        ArrayList<String> tempPlayersNames = new ArrayList<>();
+        ArrayList<String> tempPlayersName = new ArrayList<>();
 
         //Scanner object added to take the player's input for both number of players and name of the players
         Scanner scan = new Scanner(System.in);
@@ -157,13 +155,13 @@ person's turn.
         // With the conditions inside the loop, it will be determined if player's name need to be entered
         for (int i = 0; i < players; i++) {
             count++;
-            System.out.print("Enter player " + count + " name:");
+            System.out.print("Enter player " + count + " name: ");
             String playerName = scan.next();
             playersNames.add(playerName);
         }
 
 
-        System.out.print("\n>̶ Players order will be as follows: ");
+        System.out.print("\n>̶ Players order will be as follows: " + "\n");
 
         //While loop used to iterate throughout the playersNames ArrayList. The loop will run as long the list is not empty
         //In this loop the random variable will be initialized and it will pick name randomly from the playersName ArrayList.
@@ -171,20 +169,38 @@ person's turn.
         while (!playersNames.isEmpty()) {
             int randName = rand3.nextInt(playersNames.size());
 
+            // Created faker and made it return a string "name" of the animal. Otherwise its a hashCode
             String color = new Faker().color().name();
             color = color.substring(0, 1).toUpperCase() + color.substring(1);
 
-            String animalName = new Faker().animal().name(); // created faker and made it return a string "name" of the animal. Otherwise its a hashCode
+            String animalName = new Faker().animal().name();
             animalName = animalName.substring(0, 1).toUpperCase() + animalName.substring(1);//making the animal name capital
 
-            tempPlayersNames.add(playersNames.get(randName) + " the " + color + " " + animalName);
+            tempPlayersName.add(playersNames.get(randName) + " the " + color + " " + animalName);
             playersNames.remove(randName);
         }
 
-//todo Edit the print format of the names in the list instead of brackets - Steph
-//todo make it so that it returns the randomName list and then prints the playerName(plus a funny animal name like Kahoot) in the questionWindow - Daniel
+        return tempPlayersName;
+    }
 
-        return tempPlayersNames;
+    //Custom method created to format the tempPlayersName ArrayList
+    public static String formatList(ArrayList<String> arr) {
+
+        //Convert ArrayList to Object
+        Object[] obj = arr.toArray();
+
+        //Convert object to String Array
+        String[] tempPlayersName = Arrays.copyOf(obj, obj.length, String[].class);
+
+        //Use for loop to display text
+        String formattedPL = "";
+        int order = 0;
+
+        for (int i = 0; i < tempPlayersName.length; i++) {
+            order++;
+            formattedPL += order + ".\t" + tempPlayersName[i] + "\n";
+        }
+        return formattedPL;
     }
 
 
@@ -206,12 +222,7 @@ person's turn.
         //Scanner object added to take the player's input regarding game styles and topics
         Scanner scan = new Scanner(System.in);
 
-        /* Commented out the players
-        System.out.println("How many players?");
-        int players = scan.nextInt();
-        */
-
-        //Todo add info about the actual amount of questions and amount of questions of each topic..an INFO option - Daniel
+        //TODO add info about the actual amount of questions and amount of questions of each topic..an INFO option - Daniel
 
 
         System.out.println("\n" +
@@ -251,7 +262,7 @@ person's turn.
 
         System.out.println();
 
-//todo think about changing input from int to String so we can type ADMIN for adminSettings
+//TODO think about changing input from int to String so we can type ADMIN for adminSettings
 
         //Customizes the output message for style of game the user chose to play
         System.out.print(">̶ Style Number: ");
@@ -279,9 +290,8 @@ person's turn.
         //=========================================================
 
         //Player selection custom method call
-        //todo- Steph review this new changes
         playerNames = playersSelection(); // playerNames is a global ArrayList<String>
-        System.out.print(playerNames);
+        System.out.print(formatList(playerNames));
         System.out.println();
 
 
@@ -310,19 +320,9 @@ person's turn.
 
                     wholeQuestionsWithSolutionList.get(randInt).questionAnswered();
                     questionAndTimeWindowSetup(wholeQuestionsWithSolutionList.get(randInt).questionPart, playerNames.get(j), wholeQuestionsWithSolutionList.get(randInt).time); // RUNS
-                    // TODO Make it come out with a typeWriter effect, use a diff method with an, arrayList, for loop and sleep..make the sum of the milliseconds open the second window
-
-//TODO task = NEED TO CHANGE THIS STATEMENT BELOW TO PREDICATE FORM! - Steph (DONE DONE DONE)
 
                     //Lambda expression: Predicate (removedIf();) used to removed questions that have been selected twice already
                     wholeQuestionsWithSolutionList.removeIf(p -> p.isSolvedCount >= 2);
-
-                    /*
-                    if (wholeQuestionsWithSolutionList.get(randInt).isSolvedCount >= 2) {
-                        wholeQuestionsWithSolutionList.remove(wholeQuestionsWithSolutionList.get(randInt));
-                    }
-
-                    */
 
                     //Question and answer to be displayed after browsers quit
                     System.out.println("===================================================================================================================================================");
@@ -334,7 +334,8 @@ person's turn.
 
                     System.out.println("===================================================================================================================================================");
                 }
-                //todo - 01/29 - REVIEW WITH STEPH ABOUT THIS IF CONDITION. IT IS TO MAKE THE PLAYERNAME LIST GO IN A CIRCLE-IRKLE -DANIEL+STEPH*********
+
+                //If condition implemented to make the playerName list to go in circle
                 if ((j == playerNames.size() - 1)) {
                     j = 0;
                 } else {
@@ -368,8 +369,6 @@ person's turn.
                 */
             }
         }
-
-//todo add a countdown of how many questions are left of each topic and then the topic they choose count the number of questions as well - Steph
 
         //If conditions(2 of 2) implemented to move throughout the different game styles according to player's selection.
         if (typeOfGame == 2) {
@@ -442,10 +441,13 @@ person's turn.
                     }
                 }
 
+                System.out.println("\n" + topic + " has " + topicQuestionsWithSolutionList.size() + " questions available"+"\n");
 
+
+                int topicQuestionsCountDown = topicQuestionsWithSolutionList.size();
                 //For loop that it will iterate throughout the topicQuestionsWithSolutionList ArrayList size
                 for (int j = 0; j < topicQuestionsWithSolutionList.size(); j++) {
-
+                    topicQuestionsCountDown--;
                     //Initializing a random number using our RandomClass object "randTopic"
                     int randNumber = rand2.nextInt(topicQuestionsWithSolutionList.size());
                     //in case the size is 1 so the first index is 0 and will stay 0
@@ -460,7 +462,9 @@ person's turn.
                     //Prints the question
                     System.out.println(topicQuestionsWithSolutionList.get(randNumber).questionPart);
                     //Prints out the solution
-                    System.out.println(topicQuestionsWithSolutionList.get(randNumber).solutionPart);
+                    System.out.println(topicQuestionsWithSolutionList.get(randNumber).solutionPart+"\n");
+                    //Prints how many questions are left in the topic ArrayList
+                    System.out.println("This topic has "+topicQuestionsCountDown+ " questions left");
 
                     System.out.println("===================================================================================================================================================");
 
@@ -469,7 +473,8 @@ person's turn.
                         topicQuestionsWithSolutionList.remove(topicQuestionsWithSolutionList.get(randNumber));
                         j--;
                     }
-                    //todo - 01/29 - REVIEW WITH STEPH ABOUT THIS IF CONDITION. IT IS TO MAKE THE PLAYERNAME LIST GO IN A CIRCLE-IRKLE -DANIEL+STEPH*********
+
+                    //If condition implemented to make the playerName list to go in a circle
                     if ((i == playerNames.size() - 1)) {
                         i = 0;
                     } else {
@@ -604,7 +609,7 @@ person's turn.
             }
 
         }
-        //todo code input 2 (Remove a Topic From the Game then continue the game) - Daniel
+        //TODO code input 2 (Remove a Topic From the Game then continue the game) - Daniel
         if (input == 3 || input == 2) { // for now we included 2 in here because we havent coded this option yet
             return;
         }
