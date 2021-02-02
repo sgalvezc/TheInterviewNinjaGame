@@ -15,7 +15,7 @@ We created this game to:
 
 
 
-### Exception Handling Guide
+###### Exception Handling Guide
 **-StringIndexOutOfBoundsException -** Check the format of any new questions that you added a "." missing after the time can trigger this exception, along with other typos
 
 **-NullPointerException -** If any new variables are added to the QuestionAndSolution custom class make sure they are initialized!
