@@ -1,8 +1,8 @@
-# InterviewNinja :ninja:
+# InterviewNinja :crossed_swords:
 ###### by Daniel Vanshtein and Steph Galvez
 ## Version - 1.0
 
-:ninja: Hello World, Welcome to the Ultimate Interview Preperation Game...approach with Caution! :ninja:
+Hello World, Welcome to the Ultimate Interview Preperation Game...approach with Caution! :monkey:
 
 We created this game to:
 1. Learn and have fun at the same time
