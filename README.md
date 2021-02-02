@@ -9,7 +9,7 @@ We created this game to:
 2. Get our group members more involved
 3. Practice our Java skills and inact OOP concepts
 4. To make the journey through Cybertek and studying less stressful
-
+## 
 
 ## Exception Handling Guide
 ###### StringIndexOutOfBoundsException 
