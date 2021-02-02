@@ -2,7 +2,7 @@
 ###### by Daniel Vanshtein and Steph Galvez
 ## Version - 1.0
 
-:skull: Hello World, Welcome to the Ultimate Interview Preperation Game...approach with Caution! :skull:
+:ninja: Hello World, Welcome to the Ultimate Interview Preperation Game...approach with Caution! :ninja:
 
 We created this game to:
 1. Learn and have fun at the same time
