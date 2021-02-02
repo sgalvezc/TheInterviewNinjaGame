@@ -1,7 +1,7 @@
 # InterviewNinja
 ## Version - 1.0
 
-Hello World, Welcome to the Ultimate Interview Preperation Game...approach with Caution!
+:skull: Hello World, Welcome to the Ultimate Interview Preperation Game...approach with Caution! :skull:
 
 We created this game to:
 1. Learn and have fun at the same time
