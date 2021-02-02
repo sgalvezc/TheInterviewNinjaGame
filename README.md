@@ -1,4 +1,4 @@
-# InterviewNinja 
+# InterviewNinja :ninja:
 ###### by Daniel Vanshtein and Steph Galvez
 ## Version - 1.0
 
