@@ -1,4 +1,4 @@
-# InterviewNinja
+# InterviewNinja by Daniel Vanshtein and Steph Galvez
 ## Version - 1.0
 
 :skull: Hello World, Welcome to the Ultimate Interview Preperation Game...approach with Caution! :skull:
