@@ -10,6 +10,22 @@ We created this game to:
 3. Practice our Java skills and inact OOP concepts
 4. To make the journey through Cybertek and studying less stressful
 
+## Game Topics
+- Soft-Skills Questions
+  - Behavioral
+  - Jira
+- Java Technical Questions
+- Automation Framework Questions
+  - Selenium Technical
+  - TestNG
+  - Cucumber (coming soon)
+  - Junit / Json (coming soon)
+- Git / Github
+ 
+
+
+
+
 ## 
 ## Exception Handling Guide
 ###### StringIndexOutOfBoundsException 
