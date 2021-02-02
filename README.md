@@ -10,12 +10,7 @@ We created this game to:
 4. To make the journey through Cybertek and studying less stressful
 
 
-
-
-
-
-
-**Exception Handling Guide**
+## Exception Handling Guide
 ###### StringIndexOutOfBoundsException 
 - Check the format of any new questions that you added a "." missing after the time can trigger this exception, along with other typos
 
