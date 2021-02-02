@@ -74,7 +74,7 @@ public class InterviewNinja_MAIN {
         //=================================================================================
         for (int i = 0; i < questionTextAndPlayerName.length(); i++) {
             String eachChar = questionTextAndPlayerName.charAt(i) + "";
-            //TODO - 01/29 - talk about whether number should be in the question or not - DANIEL STEPH DASHA ***********
+
             driver1.findElement(By.name("questionText")).sendKeys((eachChar));
             if (i == playerNames.length() + 2) {
                 //2 enters so I make a space in between
@@ -133,7 +133,7 @@ public class InterviewNinja_MAIN {
 
 
     //PART III - Player selection setup
-    //TODO Steph Presentation
+    //22TODO Steph Presentation
 
     //Custom method created to develop the player's selection
     public static ArrayList<String> playersSelection() {
@@ -146,7 +146,7 @@ public class InterviewNinja_MAIN {
         Scanner scan = new Scanner(System.in);
         //Random object created to make random selection from the ArrayList
         Random rand3 = new Random();
-
+//todo - INVALID HANDLE FOR invalid input into How many players? - STEPH
         System.out.print(">̶ How many players? - ");
         int players = scan.nextInt();
         int count = 0;
@@ -222,8 +222,6 @@ public class InterviewNinja_MAIN {
         //Scanner object added to take the player's input regarding game styles and topics
         Scanner scan = new Scanner(System.in);
 
-        //TODO add info about the actual amount of questions and amount of questions of each topic..an INFO option - Daniel
-
 
         System.out.println("\n" +
                 "██╗███╗░░██╗████████╗███████╗██████╗░██╗░░░██╗██╗███████╗░██╗░░░░░░░██╗  ███╗░░██╗██╗███╗░░██╗░░░░░██╗░█████╗░\n" +
@@ -264,38 +262,44 @@ public class InterviewNinja_MAIN {
         //*********************************************************
         //=========================================================
 
-        //TODO Add description to this ADMIN option ---> DANIEL
-        //TODO if player chooses ADMIN and decides that no changes are needed (EXIT is selected),  can we make the player return to the main menu, instead of exiting the game? --->DANIEL
-        System.out.println("\n\n\n\t[ADMIN] Administrator Settings");
-        /*
-        Administrator Settings Explanation:
-        1. Presents player(s) with admin statistics
-        2.
-        3.
-         */
-        //*********************************************************
-        //=========================================================
-
 
         //Customizes the output message for style of game the user chose to play
+        String styleChosen = "";
+        String typeOfGame = "";
+        Styles:
+        while (true) {
         System.out.print(">̶ Style Number: ");
-        String typeOfGame = scan.next();
-        if (!typeOfGame.equalsIgnoreCase("ADMIN")) {//too not print this in case we are accessing admin settings
-            String styleChosen = "";
-            styleChosen = (typeOfGame.equals("1")) ? "ROUND ROBIN STYLE" : "TOPIC BASED STYLE";
-            System.out.println("\n>̶ You have chosen: " + styleChosen);
-        }
-        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        if (typeOfGame.equalsIgnoreCase("ADMIN")) { //secret admin access. Runs the adminStatistics Method
-            try {
-                FileInputStream file2 = new FileInputStream("src/test/java/InterviewNinja_GAME/Questions.txt");
-                adminStatistics(file2); // method to populate an array with all the questions from Questions.txt
-            } catch (FileNotFoundException e) {
-                System.err.println("File path is wrong dude, Go To File1 and Change its path! I wont Load the questions/program till you change it");
+        typeOfGame = scan.next();
+
+
+            if (!typeOfGame.equalsIgnoreCase("ADMIN")) {//too not print this in case we are accessing admin settings
+
+                if (typeOfGame.equals("1")) {
+                    styleChosen = "ROUND ROBIN STYLE";
+                    break;
+                } else if (typeOfGame.equals("2")) {
+                    styleChosen = "TOPIC BASED STYLE";
+                    break;
+                } else {
+                    System.out.println("Invalid Input! Try Again...");
+                    continue Styles;
+                }
+
+            }
+
+            //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            if (typeOfGame.equalsIgnoreCase("ADMIN")) { //secret admin access. Runs the adminStatistics Method
+                try {
+                    FileInputStream file2 = new FileInputStream("src/test/java/InterviewNinja_GAME/Questions.txt");
+                    adminStatistics(file2); // method to populate an array with all the questions from Questions.txt
+                } catch (FileNotFoundException e) {
+                    System.err.println("File path is wrong dude, Go To file2 and Change its path! I wont Load the questions/program till you change it");
+                    System.exit(0);
+                }
                 System.exit(0);
             }
-            System.exit(0);
         }
+        System.out.println("\n>̶ You have chosen: " + styleChosen);
         //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
@@ -366,7 +370,7 @@ public class InterviewNinja_MAIN {
                 System.out.print("Yes or No: ");
                 String continueYesOrNo = scan.next();
                 continueYesOrNo = continueYesOrNo.toLowerCase();
-                //TODO*** NEED TO DO MORE FORMATTING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
                 //If condition implemented to continue game if player's input is "yes", otherwise game will be terminated
                 if (continueYesOrNo.contains("yes") || continueYesOrNo.equalsIgnoreCase("y") || continueYesOrNo.equalsIgnoreCase("1")) {
@@ -454,7 +458,7 @@ public class InterviewNinja_MAIN {
                     }
                 }
 
-                System.out.println("\n" + topic + " has " + topicQuestionsWithSolutionList.size() + " questions available"+"\n");
+                System.out.println("\n" + topic + " has " + topicQuestionsWithSolutionList.size() + " questions available" + "\n");
 
 
                 int topicQuestionsCountDown = topicQuestionsWithSolutionList.size();
@@ -475,9 +479,9 @@ public class InterviewNinja_MAIN {
                     //Prints the question
                     System.out.println(topicQuestionsWithSolutionList.get(randNumber).questionPart);
                     //Prints out the solution
-                    System.out.println(topicQuestionsWithSolutionList.get(randNumber).solutionPart+"\n");
+                    System.out.println(topicQuestionsWithSolutionList.get(randNumber).solutionPart + "\n");
                     //Prints how many questions are left in the topic ArrayList
-                    System.out.println("This topic has "+topicQuestionsCountDown+ " questions left");
+                    System.out.println("This topic has " + topicQuestionsCountDown + " questions left");
 
                     System.out.println("===================================================================================================================================================");
 
@@ -524,6 +528,17 @@ public class InterviewNinja_MAIN {
 
 //TODO Add settings to each style.
 
+    //TODO Add description to this ADMIN option ---> DANIEL
+    //TODO if player chooses ADMIN and decides that no changes are needed (EXIT is selected),  can we make the player return to the main menu, instead of exiting the game? --->DANIEL
+
+    /*
+    Administrator Settings Explanation:
+    1. Presents player(s) with admin statistics
+    2.
+    3.
+     */
+    //*********************************************************
+    //=========================================================
     public static void adminStatistics(FileInputStream file1) {
         List<QuestionAndSolution> javaTopicList = new ArrayList<>();
         List<QuestionAndSolution> SSTopicList = new ArrayList<>();

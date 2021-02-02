@@ -76,7 +76,7 @@
 [TQ] 76. Write a method that can return the sum of the digits in a string. (2 min.) - Solution:
 [TQ] 77. Write a method that can find the maximum number from an int Array. (2 min.) - Solution:
 [TQ] 78. Write a method that can find the minimum number from an int Array. (2 min.) - Solution:
-[TQ] 79. Write a return method that can concate two arrays. (2 min.) - Solution:
+[TQ] 79. Write a return method that can concat two arrays. (2 min.) - Solution:
 [TQ] 80. Write  a method which can identifies given number is even or odd.  (2 min.) - Solution:
 [TQ] 81. Write a method which prints out the numbers from 1 to 30 but for numbers which are a multiple of 3, print "FIN" instead of the number and for numbers which are a multiple of 5, print "RA" instead of the number. for numbers which are a multiple of both 3 and 5, print "FINRA" instead of the number. (2 min.) - Solution:
 [TQ] 82. Write a method that can divide two numbers without using division operator. (2 min.) - Solution:
