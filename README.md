@@ -11,16 +11,17 @@ We created this game to:
 4. To make the journey through Cybertek and studying less stressful
 
 ## Game Topics
+- Java Technical Questions
+- Git / Github
 - Soft-Skills Questions
   - Behavioral
   - Jira
-- Java Technical Questions
 - Automation Framework Questions
   - Selenium Technical
   - TestNG
   - Cucumber (coming soon)
   - Junit / Json (coming soon)
-- Git / Github
+
  
 
 
