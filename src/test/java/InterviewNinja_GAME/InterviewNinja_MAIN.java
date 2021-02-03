@@ -133,7 +133,7 @@ public class InterviewNinja_MAIN {
 
 
     //PART III - Player selection setup
-    //22TODO Steph Presentation
+    //TODO Steph Presentation
 
     //Custom method created to develop the player's selection
     public static ArrayList<String> playersSelection() {
@@ -147,40 +147,53 @@ public class InterviewNinja_MAIN {
         //Random object created to make random selection from the ArrayList
         Random rand3 = new Random();
 //todo - INVALID HANDLE FOR invalid input into How many players? - STEPH
-        System.out.print(">̶ How many players? - ");
-        int players = scan.nextInt();
-        int count = 0;
 
-        //For loop used to iterate throughout the number of players entered by user.
-        // With the conditions inside the loop, it will be determined if player's name need to be entered
-        for (int i = 0; i < players; i++) {
-            count++;
-            System.out.print("Enter player " + count + " name: ");
-            String playerName = scan.next();
-            playersNames.add(playerName);
+        Players:
+        while (true) {
+
+            System.out.print(">̶ How many players? - ");
+
+            char playersNum = '0';
+            int players = scan.nextInt();
+            playersNum = playersInputFormat(players); //to convert int to Character
+            int count = 0;
+
+            if (Character.isDigit(playersNum)) {
+
+                //For loop used to iterate throughout the number of players entered by user.
+                for (char i = 0; i < players; i++) {
+                    count++;
+                    System.out.print("Enter player " + count + " name: ");
+                    String playerName = scan.next();
+                    playersNames.add(playerName);
+                }
+
+                System.out.print("\n>̶ Players order will be as follows: " + "\n");
+
+                //While loop used to iterate throughout the playersNames ArrayList. The loop will run as long the list is not empty
+                //In this loop the random variable will be initialized and it will pick name randomly from the playersName ArrayList.
+                //The name picked will be added to the tempPlayersName ArrayList
+                while (!playersNames.isEmpty()) {
+                    int randName = rand3.nextInt(playersNames.size());
+
+                    // Created faker and made it return a string "name" of the animal. Otherwise its a hashCode
+                    String color = new Faker().color().name();
+                    color = color.substring(0, 1).toUpperCase() + color.substring(1);
+
+                    String animalName = new Faker().animal().name();
+                    animalName = animalName.substring(0, 1).toUpperCase() + animalName.substring(1);//making the animal name capital
+
+                    tempPlayersName.add(playersNames.get(randName) + " the " + color + " " + animalName);
+                    playersNames.remove(randName);
+                }
+
+                return tempPlayersName;
+
+            } else {
+                System.out.println("Invalid Input, please re-enter: ");
+                continue Players;
+            }
         }
-
-
-        System.out.print("\n>̶ Players order will be as follows: " + "\n");
-
-        //While loop used to iterate throughout the playersNames ArrayList. The loop will run as long the list is not empty
-        //In this loop the random variable will be initialized and it will pick name randomly from the playersName ArrayList.
-        //The name picked will be added to the tempPlayersName ArrayList
-        while (!playersNames.isEmpty()) {
-            int randName = rand3.nextInt(playersNames.size());
-
-            // Created faker and made it return a string "name" of the animal. Otherwise its a hashCode
-            String color = new Faker().color().name();
-            color = color.substring(0, 1).toUpperCase() + color.substring(1);
-
-            String animalName = new Faker().animal().name();
-            animalName = animalName.substring(0, 1).toUpperCase() + animalName.substring(1);//making the animal name capital
-
-            tempPlayersName.add(playersNames.get(randName) + " the " + color + " " + animalName);
-            playersNames.remove(randName);
-        }
-
-        return tempPlayersName;
     }
 
     //Custom method created to format the tempPlayersName ArrayList
@@ -201,6 +214,17 @@ public class InterviewNinja_MAIN {
             formattedPL += order + ".\t" + tempPlayersName[i] + "\n";
         }
         return formattedPL;
+    }
+
+
+    //Custom method created to change the int Scanner input to char
+    public static Character playersInputFormat(int num) {
+
+        String number = String.valueOf(num);
+        char number2 = number.charAt(0);
+
+        return number2;
+
     }
 
 
@@ -268,8 +292,8 @@ public class InterviewNinja_MAIN {
         String typeOfGame = "";
         Styles:
         while (true) {
-        System.out.print(">̶ Style Number: ");
-        typeOfGame = scan.next();
+            System.out.print(">̶ Style Number: ");
+            typeOfGame = scan.next();
 
 
             if (!typeOfGame.equalsIgnoreCase("ADMIN")) {//too not print this in case we are accessing admin settings
@@ -281,7 +305,7 @@ public class InterviewNinja_MAIN {
                     styleChosen = "TOPIC BASED STYLE";
                     break;
                 } else {
-                    System.out.println("Invalid Input! Try Again...");
+                    System.out.println("Invalid Input, please re-enter: ");
                     continue Styles;
                 }
 
