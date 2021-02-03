@@ -10,7 +10,6 @@ import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.json.JsonOutput;
 import org.openqa.selenium.support.ui.Select;
 
 import java.io.FileInputStream;
@@ -153,47 +152,49 @@ public class InterviewNinja_MAIN {
 
             System.out.print(">̶ How many players? - ");
 
-            char playersNum = '0';
-            int players = scan.nextInt();
-            playersNum = playersInputFormat(players); //to convert int to Character
+            String players = scan.next();
+            players = playersInputVerification(players); //to convert int to Character
             int count = 0;
 
-            if (Character.isDigit(playersNum)) {
+            if (players != null) {
 
                 //For loop used to iterate throughout the number of players entered by user.
-                for (char i = 0; i < players; i++) {
+                for (int i = 0; i < Integer.parseInt(players); i++) {
                     count++;
                     System.out.print("Enter player " + count + " name: ");
                     String playerName = scan.next();
                     playersNames.add(playerName);
                 }
-
                 System.out.print("\n>̶ Players order will be as follows: " + "\n");
-
-                //While loop used to iterate throughout the playersNames ArrayList. The loop will run as long the list is not empty
-                //In this loop the random variable will be initialized and it will pick name randomly from the playersName ArrayList.
-                //The name picked will be added to the tempPlayersName ArrayList
-                while (!playersNames.isEmpty()) {
-                    int randName = rand3.nextInt(playersNames.size());
-
-                    // Created faker and made it return a string "name" of the animal. Otherwise its a hashCode
-                    String color = new Faker().color().name();
-                    color = color.substring(0, 1).toUpperCase() + color.substring(1);
-
-                    String animalName = new Faker().animal().name();
-                    animalName = animalName.substring(0, 1).toUpperCase() + animalName.substring(1);//making the animal name capital
-
-                    tempPlayersName.add(playersNames.get(randName) + " the " + color + " " + animalName);
-                    playersNames.remove(randName);
-                }
-
-                return tempPlayersName;
+                break;
 
             } else {
+                System.out.println();
                 System.out.println("Invalid Input, please re-enter: ");
                 continue Players;
             }
+
+
         }
+        //While loop used to iterate throughout the playersNames ArrayList. The loop will run as long the list is not empty
+        //In this loop the random variable will be initialized and it will pick name randomly from the playersName ArrayList.
+        //The name picked will be added to the tempPlayersName ArrayList
+        while (!playersNames.isEmpty()) {
+            int randName = rand3.nextInt(playersNames.size());
+
+            // Created faker and made it return a string "name" of the animal. Otherwise its a hashCode
+            String color = new Faker().color().name();
+            color = color.substring(0, 1).toUpperCase() + color.substring(1);
+
+            String animalName = new Faker().animal().name();
+            animalName = animalName.substring(0, 1).toUpperCase() + animalName.substring(1);//making the animal name capital
+
+            tempPlayersName.add(playersNames.get(randName) + " the " + color + " " + animalName);
+            playersNames.remove(randName);
+        }
+
+
+        return tempPlayersName;
     }
 
     //Custom method created to format the tempPlayersName ArrayList
@@ -218,12 +219,19 @@ public class InterviewNinja_MAIN {
 
 
     //Custom method created to change the int Scanner input to char
-    public static Character playersInputFormat(int num) {
+    public static String playersInputVerification(String num) {
+        String result = "";
 
-        String number = String.valueOf(num);
-        char number2 = number.charAt(0);
+        for (char eachCharacter : num.toCharArray()) {
+            if (Character.isDigit(eachCharacter)) {
+                result += eachCharacter + "";
+            } else {
+                return null;
+            }
+        }
 
-        return number2;
+
+        return result;
 
     }
 
