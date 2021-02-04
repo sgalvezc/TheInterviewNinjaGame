@@ -145,7 +145,6 @@ public class InterviewNinja_MAIN {
         Scanner scan = new Scanner(System.in);
         //Random object created to make random selection from the ArrayList
         Random rand3 = new Random();
-//todo - INVALID HANDLE FOR invalid input into How many players? - STEPH
 
         Players:
         while (true) {
@@ -153,7 +152,8 @@ public class InterviewNinja_MAIN {
             System.out.print(">̶ How many players? - ");
 
             String players = scan.next();
-            players = playersInputVerification(players); //to convert int to Character
+
+            players = playersInputVerification(players); //to convert String to Character
             int count = 0;
 
             if (players != null) {
@@ -161,11 +161,12 @@ public class InterviewNinja_MAIN {
                 //For loop used to iterate throughout the number of players entered by user.
                 for (int i = 0; i < Integer.parseInt(players); i++) {
                     count++;
-                    System.out.print("Enter player " + count + " name: ");
+                    System.out.print("\tEnter player " + count + " name: ");
                     String playerName = scan.next();
+                    playerName = playerName.substring(0,1).toUpperCase() + playerName.substring(1);
                     playersNames.add(playerName);
                 }
-                System.out.print("\n>̶ Players order will be as follows: " + "\n");
+                System.out.print("\n>̶ Players order will be as follows: \n");
                 break;
 
             } else {
@@ -189,11 +190,9 @@ public class InterviewNinja_MAIN {
             String animalName = new Faker().animal().name();
             animalName = animalName.substring(0, 1).toUpperCase() + animalName.substring(1);//making the animal name capital
 
-            tempPlayersName.add(playersNames.get(randName) + " the " + color + " " + animalName);
+            tempPlayersName.add(playersNames.get(randName) + " The " + color + " " + animalName);
             playersNames.remove(randName);
         }
-
-
         return tempPlayersName;
     }
 
@@ -218,7 +217,7 @@ public class InterviewNinja_MAIN {
     }
 
 
-    //Custom method created to change the int Scanner input to char
+    //Custom method created to change the String Scanner input to char
     public static String playersInputVerification(String num) {
         String result = "";
 
@@ -265,7 +264,7 @@ public class InterviewNinja_MAIN {
         System.out.println("_______________________________________________________________________________________________________________________");
 
 
-        System.out.println("What style of INTERVIEW NINJA do you want to play?");
+        System.out.println("What style of INTERVIEW NINJA do you want to play?\n");
 
         //*********************************************************
         //=========================================================
@@ -307,10 +306,10 @@ public class InterviewNinja_MAIN {
             if (!typeOfGame.equalsIgnoreCase("ADMIN")) {//too not print this in case we are accessing admin settings
 
                 if (typeOfGame.equals("1")) {
-                    styleChosen = "ROUND ROBIN STYLE";
+                    styleChosen = "ROUND ROBIN STYLE\n";
                     break;
                 } else if (typeOfGame.equals("2")) {
-                    styleChosen = "TOPIC BASED STYLE";
+                    styleChosen = "TOPIC BASED STYLE\n";
                     break;
                 } else {
                     System.out.println("Invalid Input, please re-enter: ");
@@ -377,9 +376,9 @@ public class InterviewNinja_MAIN {
                     System.out.println("===================================================================================================================================================");
 
                     //Prints the question.
-                    System.out.println(wholeQuestionsWithSolutionList.get(randInt).questionPart);
+                    System.out.println(wholeQuestionsWithSolutionList.get(randInt).questionPart+"\n");
                     //Prints out the solution.
-                    System.out.println(wholeQuestionsWithSolutionList.get(randInt).solutionPart);
+                    System.out.println("\t"+wholeQuestionsWithSolutionList.get(randInt).solutionPart+"\n");
 
                     System.out.println("===================================================================================================================================================");
                 }
@@ -490,7 +489,7 @@ public class InterviewNinja_MAIN {
                     }
                 }
 
-                System.out.println("\n" + topic + " has " + topicQuestionsWithSolutionList.size() + " questions available" + "\n");
+                System.out.println("\n\t>̶  " + topic + " has " + topicQuestionsWithSolutionList.size() + " questions available" + "\n");
 
 
                 int topicQuestionsCountDown = topicQuestionsWithSolutionList.size();
@@ -509,11 +508,11 @@ public class InterviewNinja_MAIN {
                     System.out.println("===================================================================================================================================================");
 
                     //Prints the question
-                    System.out.println(topicQuestionsWithSolutionList.get(randNumber).questionPart);
+                    System.out.println(topicQuestionsWithSolutionList.get(randNumber).questionPart+"n");
                     //Prints out the solution
-                    System.out.println(topicQuestionsWithSolutionList.get(randNumber).solutionPart + "\n");
+                    System.out.println("\t"+topicQuestionsWithSolutionList.get(randNumber).solutionPart + "\n");
                     //Prints how many questions are left in the topic ArrayList
-                    System.out.println("This topic has " + topicQuestionsCountDown + " questions left");
+                    System.out.println("\t>̶  This topic has " + topicQuestionsCountDown + " questions left\n");
 
                     System.out.println("===================================================================================================================================================");
 
