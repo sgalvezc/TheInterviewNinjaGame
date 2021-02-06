@@ -4,7 +4,7 @@ package InterviewNinja_GAME;
 @Authors: Daniel Vanshtein and Steph Galvez
  */
 
-//EXPECTED RELEASE DATE: 02/01/21**********************
+//EXPECTED RELEASE DATE: 02/01/21
 
 import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -17,17 +17,20 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 
-public class InterviewNinja_MAIN {
+public class Interview_Ninja_MAIN {
 
 
-    //PART I - Question format setup
+    //PART I - Question format setup = QuestionAndSolution.java explanation and
     //Custom class object array created
     //Located in the "MAIN" class for accessibility
 
 
-    //Custom class object array created ---> Located in the "MAIN" class for accessibility ---> Specifier: static. One copy needed for all the classes.
+    /*Custom class object array created ---> Located in the "MAIN" class for accessibility ---> Specifier: static.
+    * Because Main method is STATIC, static members can only accept Static members so ALL of our global variables and methods MUST be static to
+    * be invoked in Main method
+    * */
     public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>();
-
+    // this was not implemented right away, we had to FIGURE this out as a work around so that multiple methods and the Main can use these variables
     public static ArrayList<String> playerNames = new ArrayList<>();
 
     //TODO DASHA EXPLANATION POSSIBLY
