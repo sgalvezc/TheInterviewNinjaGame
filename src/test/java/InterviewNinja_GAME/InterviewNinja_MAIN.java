@@ -176,6 +176,7 @@ public class InterviewNinja_MAIN {
             }
 
 
+
         }
         //While loop used to iterate throughout the playersNames ArrayList. The loop will run as long the list is not empty
         //In this loop the random variable will be initialized and it will pick name randomly from the playersName ArrayList.
