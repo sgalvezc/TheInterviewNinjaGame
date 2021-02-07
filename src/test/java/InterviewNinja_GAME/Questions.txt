@@ -11,7 +11,7 @@
 [SS] 11. Describe your current role (5 min.) - Solution: 1. Remember the responsibilities listed in your resume 2. Connect your responsibilities to the ones in the job posting 3. Use details when explaining your larger and important projects 4. Describe how you use your skills to benefit the company
 [SS] 12. Describe your daily activities (5 min.) - Solution: Hint--> how do you start your day, daily meetings,duties,
 [SS] 13. Tell me about your project (5 min.) - Solution:  Hint--> a quick intro to the project w/o going onto the details, mention what is the target auditory is and what part of it you are working on.
-[SS] 14. What do you like the most about testing? (2 min.) - Solution: 1. I love solving logical puzzles 2. I love helping others 3. I love to take challenges 4. I love to be in a team where quality products will be delivered
+[SS] 14. What do you like the most about testing? (2 min.) - Solution: 1. I love solving logical puzzles 2. I love helping others 3. I love to be challenged 4. I love to be in a team where  is all about delivering quality products.
 [SS] 15. Can you explain SDLC? (5 min.) - Solution: The Software Development Life Cycle (SDLC) refers to a methodology with clearly defined processes for creating high-quality software. in detail, the SDLC methodology focuses on the following phases of software development: 1. Requirement analysis 2. Planning 3. Software design such as architectural design 4. Software development 5. Testing 6. Deployment 7. Maintenance
 [SS] 16. How would you test a options: vending machine/roller skates/tooth brush? (5 min.) - Solution:
 [SS] 17. Why do we test? (2 min.) - Solution: The testing is important since it discovers defects/bugs before the delivery to the client, which guarantees the quality of the software. It makes the software more reliable and easy to use. Thoroughly tested software ensures reliable and high-performance software operation.
@@ -25,7 +25,7 @@
 [TQ] 25. Can you explain how to create a custom method that returns odd numbers? (technical question) (2 min.) - Solution: Take a number(num) as a parameter. if(num%2!=0){ return true;}
 [GH] 26. What is GitHub? (2 min.) - Solution: GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
 [GH] 27. What is a repository? (2 min.) - Solution: Its a "cloud" where the project can be stored and worked on. There is a local repository which is on the ground level, and then there is a remote repo(aka Origin) that is in the sky cloud on Github.com. We pull FROM the sky to the ground and push FROM the ground TO the sky.
-[GH] 28. What are some Git commands? (2 min.) - Solution: Pull, Commit, Push
+[GH] 28. What are some Git commands? (2 min.) - Solution: Pull, Commit, Push, Fetch, Clone, Merge
 [GH] 29. What is Remote & Local Repository? (2 min.) - Solution: Local repo is the repo on your local hard drive. The remote repo is literally a cloud thats connected to a server that connected to GitHub.com. THIS IS NOT A GREAT ANSWER.
 [Jira] 30. How do you automate a Test Case from Jira? (3 min.) - Solution: User Story -> AC -> Test Case(Manual and/or Automated) -> Test Execution
 [SS] 31. What is Boundary Value Analysis (BVA) (2 min.) - Solution: Boundary testing is the process of testing between extreme ends or boundaries between partitions of the input values. So these extreme ends like Start End, Lower  Upper, Maximum Minimum, Just Inside Just Outside values are called boundary values and the testing is called "boundary testing".
@@ -68,7 +68,7 @@
 [SS] 68. Which part of the regression test should be automated? (3 min.) - Solution: tests which are stable,  repeated frequently, simple and required no tester input  are good candidates for automation (edited)
 [Java] 69. What is the abstract concept in OOP and why do we use it? Give one example please (2 min.) - Solution: Abstract classes help us organize what all the subclasses SHOULD have/do
 [Java] 70. What is the difference between Interface and Abstraction? How are each created? What methods cannot be abstract/interfaced? (3 min.) - Solution:
-[TQ] 71. Write/describe your logic how you would create a return method that can reverse  String. (2 min.) - Solution:
+[Java] 71. What is the difference between Process and Thread? (2 min.) - Solution:A process is a self contained execution environment and it can be seen as a program or application whereas Thread is a single task of execution within the process. Java runtime environment runs as a single process which contains different classes and programs as processes. Thread can be called lightweight process. Thread requires less resources to create and exists in the process, thread shares the process resources.
 [TQ] 72. Write/describe your logic how you would create a return method that can remove the duplicated values from String. (2 min.) - Solution:
 [TQ] 73. Write/describe your logic how you would create a return  method that can find the unique characters from the String. (2 min.) - Solution:
 [TQ] 74.Write/describe your logic how you would create a return method that check if a string is build out of the same letters as another string. (2 min.) - Solution:
