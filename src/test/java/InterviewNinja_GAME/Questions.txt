@@ -13,13 +13,13 @@
 [SS] 13. Tell me about your project (5 min.) - Solution:  Hint--> a quick intro to the project w/o going onto the details, mention what is the target auditory is and what part of it you are working on.
 [SS] 14. What do you like the most about testing? (2 min.) - Solution: 1. I love solving logical puzzles 2. I love helping others 3. I love to be challenged 4. I love to be in a team where  is all about delivering quality products.
 [SS] 15. Can you explain SDLC? (5 min.) - Solution: The Software Development Life Cycle (SDLC) refers to a methodology with clearly defined processes for creating high-quality software. in detail, the SDLC methodology focuses on the following phases of software development: 1. Requirement analysis 2. Planning 3. Software design such as architectural design 4. Software development 5. Testing 6. Deployment 7. Maintenance
-[SS] 16. How would you test a options: vending machine/roller skates/tooth brush? (5 min.) - Solution:
+[SS] 16. How would you test a : vending machine/roller skates/tooth brush? (5 min.) - Solution:
 [SS] 17. Why do we test? (2 min.) - Solution: The testing is important since it discovers defects/bugs before the delivery to the client, which guarantees the quality of the software. It makes the software more reliable and easy to use. Thoroughly tested software ensures reliable and high-performance software operation.
 [SS] 18. Explain the Agile_Scrum ceremonies/meetings and the different roles (5 min.) - Solution:
 [SS] 19. What is the testing hierarchy? (3 min.) - Solution: There are generally four recognized levels of testing: unit/component testing, integration testing, system testing, and acceptance testing. Tests are frequently grouped by where they are added in the software development process, or by the level of specificity of the test.
 [SS] 20. What are the different type of testing and explain your favorite one. (3 min.) - Solution: 1. Unit/component testing 2. Integration testing 3. Regression testing 4. Smoke testing 5. Alpha Testing 6. Beta Testing 7. System Testing 8. Stress Testing 9. Performance Testing 10. Object-Oriented Testin
 [Java] 21. What are the differences between a Constructor and a Method? (2 min.) - Solution: Constructor is used to initialize an object whereas method is used to exhibits functionality of an object. Constructors are invoked implicitly whereas methods are invoked explicitly. Constructor does not return any value where the method may/may not return a value. In case constructor is not present, a default constructor is provided by java compiler. In the case of a method, no default method is provided. Constructor should be of the same name as that of class. Method name should not be of the same name as that of class.
-[Java] 22.What are the differences between Arrays and ArrayList in Java? (2 min.) - Solution: An array is basic functionality provided by Java. ArrayList is part of collection framework in Java. Therefore array members are accessed using [], while ArrayList has a set of methods to access elements and modify them. ArrayList size is dynamic, while Array size is fixed.
+[Java] 22. What are the differences between Arrays and ArrayList in Java? (2 min.) - Solution: An array is basic functionality provided by Java. ArrayList is part of collection framework in Java. Therefore array members are accessed using [], while ArrayList has a set of methods to access elements and modify them. ArrayList size is dynamic, while Array size is fixed.
 [TQ] 23. Can you explain how to reverse a String? (2 min.) - Solution: OH BOY. TECHNICAL ANSWER MAY VARY. Create a for loop that goes backwards(i--), find each character by using .charAt() then concat with String result from last to first within the loop.
 [TQ] 24. Can you explain how to combine two arrays? (2 min.) - Solution: TECHNICAL ANSWER VARIES
 [TQ] 25. Can you explain how to create a custom method that returns odd numbers? (technical question) (2 min.) - Solution: Take a number(num) as a parameter. if(num%2!=0){ return true;}
@@ -29,7 +29,7 @@
 [GH] 29. What is Remote & Local Repository? (2 min.) - Solution: Local repo is the repo on your local hard drive. The remote repo is literally a cloud thats connected to a server that connected to GitHub.com. THIS IS NOT A GREAT ANSWER.
 [Jira] 30. How do you automate a Test Case from Jira? (3 min.) - Solution: User Story -> AC -> Test Case(Manual and/or Automated) -> Test Execution
 [SS] 31. What is Boundary Value Analysis (BVA) (2 min.) - Solution: Boundary testing is the process of testing between extreme ends or boundaries between partitions of the input values. So these extreme ends like Start End, Lower  Upper, Maximum Minimum, Just Inside Just Outside values are called boundary values and the testing is called "boundary testing".
-[Jira] 32.What is a bug and How do you create a bug ticket? (3 min.) - Solution: A bug is a defect found while doing a test execution. It can be reported through the comments of the specific step in the test execution or a Bug issue can be created on Jira linked to that specific step of the test execution
+[Jira] 32. What is a bug and How do you create a bug ticket? (3 min.) - Solution: A bug is a defect found while doing a test execution. It can be reported through the comments of the specific step in the test execution or a Bug issue can be created on Jira linked to that specific step of the test execution
 [SS] 33. What is a Test Case? (2 min.) - Solution: It is a document that explains the steps needed to manually or automatically test the Acceptance Criteria.
 [Java] 34. Can you explain the different types of Access Modifiers? (3 min.) - Solution: Public(Global/Project Visibility), Protected(Package and Subclass Visibility), Default(Package Visibility), Private(Class Visibility)
 [Java] 35. What does OOP stands for? (2 min.) - Solution: Object oriented programming
@@ -71,10 +71,10 @@
 [Java] 71. What is the difference between Process and Thread? (2 min.) - Solution:A process is a self contained execution environment and it can be seen as a program or application whereas Thread is a single task of execution within the process. Java runtime environment runs as a single process which contains different classes and programs as processes. Thread can be called lightweight process. Thread requires less resources to create and exists in the process, thread shares the process resources.
 [TQ] 72. Write/describe your logic how you would create a return method that can remove the duplicated values from String. (2 min.) - Solution:
 [TQ] 73. Write/describe your logic how you would create a return  method that can find the unique characters from the String. (2 min.) - Solution:
-[TQ] 74.Write/describe your logic how you would create a return method that check if a string is build out of the same letters as another string. (2 min.) - Solution:
+[TQ] 74. Write/describe your logic how you would create a return method that check if a string is build out of the same letters as another string. (2 min.) - Solution:
 [TQ] 75. Write/describe your logic how you would create a return method that can find the frequency of characters. (2 min.) - Solution:
 [TQ] 76. Write/describe your logic how you would create a method that can return the sum of the digits in a string. (2 min.) - Solution:
-[TQ] 77. Write/describe your logic how you would create a method that can find the maximum number from an int Array. (2 min.) - Solution:
+[Java] 77. What is Java Garbage Collector? (2 min.) - Solution:
 [TQ] 78. Write/describe your logic how you would create a method that can find the minimum number from an int Array. (2 min.) - Solution:
 [TQ] 79. Write/describe your logic how you would create a return method that can concat two arrays. (2 min.) - Solution:
 [TQ] 80. Write/describe your logic how you would create a method which can identifies given number is even or odd.  (2 min.) - Solution:
@@ -88,7 +88,7 @@
 [Java] 88. Can we override the static methods? (2 min.) - Solution: No, we can not override static methods. If a static method is created with a similar method signature as a method being passed down by inheritance this will be method hiding, not  overriding.
 [Java] 89. Can we execute a program without main() method? (2 min.) - Solution: Yes, one of the ways to execute the program without the main method is using static block. Also, in testing we use other approaches such as the Test annotations to run the code.
 [Java] 90. What is difference between stack and heap? (2 min.) - Solution: Both are used for memory but have different purposes. Stack: Stores primitives, method calls, and references; Heap: Stores the objects themselves. The String pool is also in the heap.
-[Java] 91. What are Wrapper classes? (2 min.) - Solution: Wrapper classes are object representations of primitive datatypes. These classes are needed to be able to store primitive like data in collections such as ArrayList. These wrapper classes also have useful utility methods.
+[Java] 91. What are Wrapper classes? (2 min.) - Solution: Wrapper classes are object representations of primitive data types. These classes are needed to be able to store primitive like data in collections such as ArrayList. These wrapper classes also have useful utility methods.
 [SS] 92. What did you talk about in your last retro meeting? Give an Example Please... (5 min.) - Solution: What went well during the last sprint / What didn't go well during the last sprint / How can we improve for the next sprint
 [SS] 93. Have you worked under pressure? (3 min.) - Solution: Hint--> Give an example of how you succeeded working under the pressure, close to the deadline for instance
 [SS] 94. Where do you see yourself 5 years from now? (2 min.) - Solution: Hint--> it is always good to show your intentions with the company that is hiring you and give them a strong feeling that you are willing to stay with them and grow
@@ -107,7 +107,6 @@
 [Selenium] 107. What dependencies do you use in your framework? (5 min.) - Solution:
 [Selenium] 108. What is Selenium Web driver as you mentioned it in your resume? (3 min.) - Solution:
 [Selenium] 109. What is TestNG annotations and why we use them? (3 min.) - Solution:
-[Java] 109. How to call one constructor from the other constructor? (2 min.) - Solution:
 [Java] 110. What is super keyword in java? (1 min.) - Solution:
 [Java] 111. What is an object? (1 min.) - Solution: Object is an instance of a class
 [Java] 112. What is class in java? (1 min.) - Solution: Class is like an object constructor, ir a "blueprint" for creating objects
@@ -125,7 +124,15 @@
 [GH] 124. What is staging area or index? (2 min.) - Solution: That before completing the commits, it can be formatted and reviewed in an intermediate area known as ‘Staging Area’ or ‘Index’.
 [GH] 125. Describe the branching strategies you have used. (3 min.) - Solution: In the end tell them that branching strategies vary from one organization to another so I know basic branching operations like delete, merge, checking out a branch, etc.  1. Feature branching: A feature branch model keeps all of the changes for a particular feature inside of a branch. When the feature is fully tested and validated by automated tests, the branch is then merged into master. 2. Task branching: In this model, each task is implemented on its own branch with the task key included in the branch name. It is easy to see which code implements which task, just look for the task key in the branch name. 3. Release branching: Once the develop branch has acquired enough features for a release, you can clone that branch to form a Release branch. Creating this branch starts the next release cycle, so no new features can be added after this point, only bug fixes, documentation generation, and other release-oriented tasks should go in this branch. Once it is ready to ship, the release gets merged into master and tagged with a version number. In addition, it should be merged back into the develop branch, which may have progressed since the release was initiated.
 [GH] 126. What is HEAD? (1 min.) - Solution: HEAD is used to refer to the last commit in the currently checked-out branch.
-[GH] 127. What is the difference between rebasing and merge in Git? (3 min.) - Solution: In Git, the rebase command is used to integrate changes from one branch into another. It is an alternative to the “merge” command. The difference between rebasing and merge is that rebase rewrites the commit history in order to produce a straight, linear succession of commits. Merging is Git’s way of putting a forked history back together again. The git merge command helps you take the independent lines of development created by git branch and integrate them into a single branch.
+[GH] 127. What is the difference between rebasing and merge in Git? (2 min.) - Solution: In Git, the rebase command is used to integrate changes from one branch into another. It is an alternative to the “merge” command. The difference between rebasing and merge is that rebase rewrites the commit history in order to produce a straight, linear succession of commits. Merging is Git’s way of putting a forked history back together again. The git merge command helps you take the independent lines of development created by git branch and integrate them into a single branch.
+[Java] 128. What kind of class can not have a "child"? (1 min.) - Solution: Final
+[SS] 129. Why us ? why are you applying our company? (2 min.) - Solution:
+[Java] 130. How to call one constructor from the other constructor? (2 min.) - Solution:
+[Jira] 131. What is product backlog? (2 min.) - Solution: A product backlog is a prioritized list of work for the development team that is derived from the roadmap and its requirements.
+[SS] 132. What is static testing? (2 min.) - Solution: Static Testing is a software testing technique which is used to check defects in software application without executing the code.
+[SS] 133. What is dynamic testing? (2 min.) - Solution: Is a term used in software engineering to describe the testing of the dynamic behavior of code.
+[SS] 134. What is integration testing and who does that? What environment it runs in your company?  (2 min.) - Solution:
+
 
 
 
