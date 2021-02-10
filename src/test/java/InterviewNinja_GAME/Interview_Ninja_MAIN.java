@@ -247,7 +247,7 @@ public class Interview_Ninja_MAIN {
 
         //Try & Catch exception added in the case "file1" path is lost
         try {
-            FileInputStream file1 = new FileInputStream("src/test/java/InterviewNinja_GAME/Questions.txt");
+                FileInputStream file1 = new FileInputStream("src/test/java/InterviewNinja_GAME/Questions.txt");
             populateQuestionList(file1); // method to populate an array with all the questions from Questions.txt
         } catch (FileNotFoundException e) {
             System.err.println("File path is wrong dude, Go To File1 and Change its path! I wont Load the questions/program till you change it");

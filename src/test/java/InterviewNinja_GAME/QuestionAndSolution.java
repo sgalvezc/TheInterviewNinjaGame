@@ -1,11 +1,13 @@
 package InterviewNinja_GAME;
 
+
 public class QuestionAndSolution {
 
     //QuestionAndSolution q1 = new QuestionAndSolution();
     //q1.topic or q1.isSolvedCount
     //if we have instance variables or instance methods we NEED an object to invoke them
     //All these variables are different for each object/question but they also BELONG to that specific object/question
+
 
     public int isSolvedCount = 0;
     public int numberOfQuestion;
@@ -17,7 +19,7 @@ public class QuestionAndSolution {
 
 
     //constructor that attaches the questions number to that question...this is for reference purposes later
-    public QuestionAndSolution(int numberOfQuestion) {//constructor format
+    public QuestionAndSolution(int numberOfQuestion) {//constructor format to
         this.numberOfQuestion = numberOfQuestion;
     //in order to fully assign all the variables to the object, we needed to have it read a file of questions line by line first
 
