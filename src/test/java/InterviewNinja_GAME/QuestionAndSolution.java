@@ -20,7 +20,7 @@ public class QuestionAndSolution {
 
     //constructor that attaches the questions number to that question...this is for reference purposes later
     public QuestionAndSolution(int numberOfQuestion) {//constructor format to
-        this.numberOfQuestion = numberOfQuestion;
+        this.numberOfQuestion = numberOfQuestion; // gives each question a # .. like an ID
     //in order to fully assign all the variables to the object, we needed to have it read a file of questions line by line first
 
     }
