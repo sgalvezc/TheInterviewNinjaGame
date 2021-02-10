@@ -33,20 +33,41 @@ public class Interview_Ninja_MAIN {
     // this was not implemented right away, we had to FIGURE this out as a work around so that multiple methods and the Main can use these variables
     public static ArrayList<String> playerNames = new ArrayList<>();
 
+    //PART II - The timer setup
     //TODO DASHA EXPLANATION POSSIBLY
-    //Custom method with "FileInputStream" parameter
+    //1.
+    // Thank you Stephanie
+    // Hello my name is Dasha Volkau, i am very grateful for the opportunity given to me by Daniel and Stephanie to participate in such an awesome project
+    //
+    //
+    // We have created a custom method that would read questions from file1
     public static void populateQuestionList(FileInputStream file1) {
-        //Scanner object to read from "file1" instead of "System.in"
+        //actually Gurhan was doing a re-cap on the FileInputStream class this  morning
+        // class that obtains input bytes from a file.
+        //here with the file 1 will be able to read from the text file Questions.txt instead of "System.in"
         Scanner scanner = new Scanner(file1);
-        //ArrayList created to add all the interview questions from "file1"
+        //ArrayList of String created to add all the interview questions from "file1"
         ArrayList<String> interviewQuestions = new ArrayList<>();
         //While loop added ---> loop will run each line of "file1". Each line is treated like an index.
         while (scanner.hasNext()) {
+            //as long as there is something to read the loop will eterate.
             interviewQuestions.add(scanner.nextLine());
         }
 
-        //For loop will iterate throughout the interviewQuestions ArrayList and it'll add each question to the wholeQuestionsWithSolutionList ArrayList
+//        once its done, we implemented
+//        the for loop
+        //For loop will iterate throughout the interviewQuestions ArrayList
+        // and it'll add each question to the wholeQuestionsWithSolutionList ArrayList
+//
+//        Remember where we initialize those instance variables that Steph mentioned
+//        and they are going to determine what part of the question will be displayed
+
+
         for (int i = 0; i < interviewQuestions.size(); i++) {
+            //each iteration of this loop represents each line of the file
+            // and each line of the file repr one obj of the QuestionAndSolution  class
+            // Specific format with symbols in each line that represent each line of the question that we will be extracting
+
             wholeQuestionsWithSolutionList.add(new QuestionAndSolution((i + 1)));
             wholeQuestionsWithSolutionList.get(i).questionPart = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("]") + 2, interviewQuestions.get(i).indexOf("-"));
             wholeQuestionsWithSolutionList.get(i).solutionPart = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("-") + 2);
@@ -57,7 +78,6 @@ public class Interview_Ninja_MAIN {
     }
 
 
-    //PART II - The timer setup
     //TODO Daniel Presentation
     public static void questionAndTimeWindowSetup(String questionText, String playerNames, String time) throws InterruptedException {
 
