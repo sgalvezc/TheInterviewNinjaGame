@@ -4,13 +4,12 @@ package InterviewNinja_GAME;
 @Authors: Daniel Vanshtein and Steph Galvez
  */
 
-//EXPECTED RELEASE DATE: 02/01/21**********************
+//EXPECTED RELEASE DATE: 02/01/21
 
 import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.json.JsonOutput;
 import org.openqa.selenium.support.ui.Select;
 
 import java.io.FileInputStream;
@@ -18,17 +17,20 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 
-public class InterviewNinja_MAIN {
+public class Interview_Ninja_MAIN {
 
 
-    //PART I - Question format setup
+    //PART I - Question format setup = QuestionAndSolution.java explanation and
     //Custom class object array created
     //Located in the "MAIN" class for accessibility
 
 
-    //Custom class object array created ---> Located in the "MAIN" class for accessibility ---> Specifier: static. One copy needed for all the classes.
+    /*Custom class object array created ---> Located in the "MAIN" class for accessibility ---> Specifier: static.
+    * Because Main method is STATIC, static members can only accept Static members so ALL of our global variables and methods MUST be static to
+    * be invoked in Main method
+    * */
     public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>();
-
+    // this was not implemented right away, we had to FIGURE this out as a work around so that multiple methods and the Main can use these variables
     public static ArrayList<String> playerNames = new ArrayList<>();
 
     //TODO DASHA EXPLANATION POSSIBLY
@@ -68,6 +70,7 @@ public class InterviewNinja_MAIN {
         Dimension d1 = new Dimension(1800, 500);
         driver1.manage().window().setSize(d1);
         driver1.get("https://watsgucci.github.io/");// from a different project/repo. This is the github domain i created thats given to me from my github account!. HTML file is in watsgucci.github.io repo.
+//https://pages.github.com/*********** INSTRUCTIONS TO MAKE OWN DOMAIN
 
         //=================================================================================
         //TYPEWRITER STARTS
@@ -146,54 +149,56 @@ public class InterviewNinja_MAIN {
         Scanner scan = new Scanner(System.in);
         //Random object created to make random selection from the ArrayList
         Random rand3 = new Random();
-//todo - INVALID HANDLE FOR invalid input into How many players? - STEPH
 
         Players:
         while (true) {
 
             System.out.print(">̶ How many players? - ");
 
-            char playersNum = '0';
-            int players = scan.nextInt();
-            playersNum = playersInputFormat(players); //to convert int to Character
+            String players = scan.next();
+
+            players = playersInputVerification(players); //to convert String to Character
             int count = 0;
 
-            if (Character.isDigit(playersNum)) {
+            if (players != null) {
 
                 //For loop used to iterate throughout the number of players entered by user.
-                for (char i = 0; i < players; i++) {
+                for (int i = 0; i < Integer.parseInt(players); i++) {
                     count++;
-                    System.out.print("Enter player " + count + " name: ");
+                    System.out.print("\tEnter player " + count + " name: ");
                     String playerName = scan.next();
+                    playerName = playerName.substring(0,1).toUpperCase() + playerName.substring(1);
                     playersNames.add(playerName);
                 }
-
-                System.out.print("\n>̶ Players order will be as follows: " + "\n");
-
-                //While loop used to iterate throughout the playersNames ArrayList. The loop will run as long the list is not empty
-                //In this loop the random variable will be initialized and it will pick name randomly from the playersName ArrayList.
-                //The name picked will be added to the tempPlayersName ArrayList
-                while (!playersNames.isEmpty()) {
-                    int randName = rand3.nextInt(playersNames.size());
-
-                    // Created faker and made it return a string "name" of the animal. Otherwise its a hashCode
-                    String color = new Faker().color().name();
-                    color = color.substring(0, 1).toUpperCase() + color.substring(1);
-
-                    String animalName = new Faker().animal().name();
-                    animalName = animalName.substring(0, 1).toUpperCase() + animalName.substring(1);//making the animal name capital
-
-                    tempPlayersName.add(playersNames.get(randName) + " the " + color + " " + animalName);
-                    playersNames.remove(randName);
-                }
-
-                return tempPlayersName;
+                System.out.print("\n>̶ Players order will be as follows: \n");
+                break;
 
             } else {
+                System.out.println();
                 System.out.println("Invalid Input, please re-enter: ");
                 continue Players;
             }
+
+
+
         }
+        //While loop used to iterate throughout the playersNames ArrayList. The loop will run as long the list is not empty
+        //In this loop the random variable will be initialized and it will pick name randomly from the playersName ArrayList.
+        //The name picked will be added to the tempPlayersName ArrayList
+        while (!playersNames.isEmpty()) {
+            int randName = rand3.nextInt(playersNames.size());
+
+            // Created faker and made it return a string "name" of the animal. Otherwise its a hashCode
+            String color = new Faker().color().name();
+            color = color.substring(0, 1).toUpperCase() + color.substring(1);
+
+            String animalName = new Faker().animal().name();
+            animalName = animalName.substring(0, 1).toUpperCase() + animalName.substring(1);//making the animal name capital
+
+            tempPlayersName.add(playersNames.get(randName) + " The " + color + " " + animalName);
+            playersNames.remove(randName);
+        }
+        return tempPlayersName;
     }
 
     //Custom method created to format the tempPlayersName ArrayList
@@ -217,13 +222,20 @@ public class InterviewNinja_MAIN {
     }
 
 
-    //Custom method created to change the int Scanner input to char
-    public static Character playersInputFormat(int num) {
+    //Custom method created to change the String Scanner input to char
+    public static String playersInputVerification(String num) {
+        String result = "";
 
-        String number = String.valueOf(num);
-        char number2 = number.charAt(0);
+        for (char eachCharacter : num.toCharArray()) {
+            if (Character.isDigit(eachCharacter)) {
+                result += eachCharacter + "";
+            } else {
+                return null;
+            }
+        }
 
-        return number2;
+
+        return result;
 
     }
 
@@ -257,7 +269,7 @@ public class InterviewNinja_MAIN {
         System.out.println("_______________________________________________________________________________________________________________________");
 
 
-        System.out.println("What style of INTERVIEW NINJA do you want to play?");
+        System.out.println("What style of INTERVIEW NINJA do you want to play?\n");
 
         //*********************************************************
         //=========================================================
@@ -299,10 +311,10 @@ public class InterviewNinja_MAIN {
             if (!typeOfGame.equalsIgnoreCase("ADMIN")) {//too not print this in case we are accessing admin settings
 
                 if (typeOfGame.equals("1")) {
-                    styleChosen = "ROUND ROBIN STYLE";
+                    styleChosen = "ROUND ROBIN STYLE\n";
                     break;
                 } else if (typeOfGame.equals("2")) {
-                    styleChosen = "TOPIC BASED STYLE";
+                    styleChosen = "TOPIC BASED STYLE\n";
                     break;
                 } else {
                     System.out.println("Invalid Input, please re-enter: ");
@@ -369,9 +381,9 @@ public class InterviewNinja_MAIN {
                     System.out.println("===================================================================================================================================================");
 
                     //Prints the question.
-                    System.out.println(wholeQuestionsWithSolutionList.get(randInt).questionPart);
+                    System.out.println(wholeQuestionsWithSolutionList.get(randInt).questionPart+"\n");
                     //Prints out the solution.
-                    System.out.println(wholeQuestionsWithSolutionList.get(randInt).solutionPart);
+                    System.out.println("\t"+wholeQuestionsWithSolutionList.get(randInt).solutionPart+"\n");
 
                     System.out.println("===================================================================================================================================================");
                 }
@@ -482,7 +494,7 @@ public class InterviewNinja_MAIN {
                     }
                 }
 
-                System.out.println("\n" + topic + " has " + topicQuestionsWithSolutionList.size() + " questions available" + "\n");
+                System.out.println("\n\t>̶  " + topic + " has " + topicQuestionsWithSolutionList.size() + " questions available" + "\n");
 
 
                 int topicQuestionsCountDown = topicQuestionsWithSolutionList.size();
@@ -501,11 +513,11 @@ public class InterviewNinja_MAIN {
                     System.out.println("===================================================================================================================================================");
 
                     //Prints the question
-                    System.out.println(topicQuestionsWithSolutionList.get(randNumber).questionPart);
+                    System.out.println(topicQuestionsWithSolutionList.get(randNumber).questionPart+"n");
                     //Prints out the solution
-                    System.out.println(topicQuestionsWithSolutionList.get(randNumber).solutionPart + "\n");
+                    System.out.println("\t"+topicQuestionsWithSolutionList.get(randNumber).solutionPart + "\n");
                     //Prints how many questions are left in the topic ArrayList
-                    System.out.println("This topic has " + topicQuestionsCountDown + " questions left");
+                    System.out.println("\t>̶  This topic has " + topicQuestionsCountDown + " questions left\n");
 
                     System.out.println("===================================================================================================================================================");
 

@@ -10,6 +10,14 @@ We created this game to:
 3. Practice our Java skills and inact OOP concepts
 4. To make the journey through Cybertek and studying less stressful
 
+## Game Styles Explained
+1. Round Robin
+  - The topics will be all random and the questions can be repeated but only once. After all questions are presented two times, the game will end.
+  - After each question the user will be prompted with a option to Continue or not, so there is a pause.
+2. Topic Based
+  - Right now, after you choose a topic, the questions will go on continuously(without pause). Settings will be implemented in the future however.
+3. More Coming Soon..!
+
 
 
 ## Game Topics
