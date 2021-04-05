@@ -26,9 +26,9 @@ public class Interview_Ninja_MAIN {
 
 
     /*Custom class object array created ---> Located in the "MAIN" class for accessibility ---> Specifier: static.
-    * Because Main method is STATIC, static members can only accept Static members so ALL of our global variables and methods MUST be static to
-    * be invoked in Main method
-    * */
+     * Because Main method is STATIC, static members can only accept Static members so ALL of our global variables and methods MUST be static to
+     * be invoked in Main method
+     * */
     public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>();
     // this was not implemented right away, we had to FIGURE this out as a work around so that multiple methods and the Main can use these variables
     public static ArrayList<String> playerNames = new ArrayList<>();
@@ -167,7 +167,7 @@ public class Interview_Ninja_MAIN {
                     count++;
                     System.out.print("\tEnter player " + count + " name: ");
                     String playerName = scan.next();
-                    playerName = playerName.substring(0,1).toUpperCase() + playerName.substring(1);
+                    playerName = playerName.substring(0, 1).toUpperCase() + playerName.substring(1);
                     playersNames.add(playerName);
                 }
                 System.out.print("\n>̶ Players order will be as follows: \n");
@@ -178,7 +178,6 @@ public class Interview_Ninja_MAIN {
                 System.out.println("Invalid Input, please re-enter: ");
                 continue Players;
             }
-
 
 
         }
@@ -381,9 +380,9 @@ public class Interview_Ninja_MAIN {
                     System.out.println("===================================================================================================================================================");
 
                     //Prints the question.
-                    System.out.println(wholeQuestionsWithSolutionList.get(randInt).questionPart+"\n");
+                    System.out.println(wholeQuestionsWithSolutionList.get(randInt).questionPart + "\n");
                     //Prints out the solution.
-                    System.out.println("\t"+wholeQuestionsWithSolutionList.get(randInt).solutionPart+"\n");
+                    System.out.println("\t" + wholeQuestionsWithSolutionList.get(randInt).solutionPart + "\n");
 
                     System.out.println("===================================================================================================================================================");
                 }
@@ -440,6 +439,7 @@ public class Interview_Ninja_MAIN {
                 System.out.println("[4] Git & GitHub");
                 System.out.println("[5] Jira");
                 System.out.println("[6] Technical ");
+                System.out.println("[7] Real Interview Questions ");
 
                 //Variable that will saved player's input regarding game style
                 String topicSelection = scan.next();
@@ -480,6 +480,10 @@ public class Interview_Ninja_MAIN {
                         topic = "TQ";
                         break;
 
+                    case "7":
+                        topic = "RIQ";
+                        break;
+
                     default://added default to make sure an inappropriate input is handled
                         System.out.println("\n******************************************************************************************************************\nYour input is not valid...Please choose from the following menu...\n");
                         continue gameMenu;
@@ -513,9 +517,9 @@ public class Interview_Ninja_MAIN {
                     System.out.println("===================================================================================================================================================");
 
                     //Prints the question
-                    System.out.println(topicQuestionsWithSolutionList.get(randNumber).questionPart+"n");
+                    System.out.println(topicQuestionsWithSolutionList.get(randNumber).questionPart + "n");
                     //Prints out the solution
-                    System.out.println("\t"+topicQuestionsWithSolutionList.get(randNumber).solutionPart + "\n");
+                    System.out.println("\t" + topicQuestionsWithSolutionList.get(randNumber).solutionPart + "\n");
                     //Prints how many questions are left in the topic ArrayList
                     System.out.println("\t>̶  This topic has " + topicQuestionsCountDown + " questions left\n");
 
@@ -582,6 +586,7 @@ public class Interview_Ninja_MAIN {
         List<QuestionAndSolution> JiraTopicList = new ArrayList<>();
         List<QuestionAndSolution> SeleniumTopicList = new ArrayList<>();
         List<QuestionAndSolution> GHTopicList = new ArrayList<>();
+        List<QuestionAndSolution> RIQTopicList = new ArrayList<>();
 
         List<QuestionAndSolution> timerList = new ArrayList<>();
 
@@ -608,6 +613,9 @@ public class Interview_Ninja_MAIN {
         wholeQuestionsWithSolutionList.forEach(p -> {
             if (p.topic.equals("GH")) GHTopicList.add(p);
         });
+        wholeQuestionsWithSolutionList.forEach(p -> {
+            if (p.topic.equals("RIQ")) RIQTopicList.add(p);
+        });
 
         System.out.println();
         System.out.println("**************************************");
@@ -617,6 +625,7 @@ public class Interview_Ninja_MAIN {
         System.out.println("Jira Questions: " + JiraTopicList.size() + " questions");
         System.out.println("Selenium Questions: " + SeleniumTopicList.size() + " questions");
         System.out.println("GitHub Questions: " + GHTopicList.size() + " questions");
+        System.out.println("Real Interview Questions: " + RIQTopicList.size() + " questions");
         System.out.println("**************************************");
 
         Scanner sc = new Scanner(System.in);
@@ -639,6 +648,7 @@ public class Interview_Ninja_MAIN {
             System.out.println("[4] Jira");
             System.out.println("[5] Selenium");
             System.out.println("[6] Git Hub");
+            System.out.println("[7] Real Interview Questions");
             System.out.print("INPUT: ");
             input = sc.nextInt();
 
@@ -664,14 +674,18 @@ public class Interview_Ninja_MAIN {
                                 SeleniumTopicList.forEach(p ->
                                         System.out.println(p.questionPart));
                             } else {
-                                GHTopicList.forEach(p ->
-                                        System.out.println(p.questionPart));
+                                if ((input == 6)) {
+                                    GHTopicList.forEach(p ->
+                                            System.out.println(p.questionPart));
+                                } else {
+                                    RIQTopicList.forEach(p ->
+                                            System.out.println(p.questionPart));
+                                }
                             }
                         }
                     }
                 }
             }
-
         }
         //TODO code input 2 (Remove a Topic From the Game then continue the game) - Daniel
         if (input == 3 || input == 2) { // for now we included 2 in here because we havent coded this option yet

@@ -186,6 +186,151 @@
 [Java] 186. What is “IS-A” relationship in Java? (2 min.) - Solution: “IS-A” relationship is also known as inheritance. We can implement ‘is a’ relationship or inheritance in java using extends keyword. The advantage or inheritance or is a relationship is re-usability of code instead of duplicating the code. Example =  Motorcycle is a Vehicle. Car is a Vehicle. Both Car and Motorcycle extend Vehicle.
 [Java] 187. What is ‘HAS A’’ relationship in java? (2 min.) - Solution: ‘HAS A’  relationship is also known as “composition or Aggregation”. As in inheritance we have ‘extends’ keyword we don’t have any keyword to implement ‘Has a’ relationship in java. The main advantage of ‘Has-A‘ relationship in java code re-usability.
 [Java] 188. What methods can have implementation in Interfaces? (2 min.) - Solution:
+[RIQ] 189. Tell me about yourself (3 min.) - Solution:
+[RIQ] 190. Do you know java and selenium? (3 min.) - Solution:
+[RIQ] 191. Do you have any idea about mobile testing? (3 min.) - Solution:
+[RIQ] 192. How do you find an even number in an array? (3 min.) - Solution:
+[RIQ] 193. Do you know the OOP concept? Let’s talk about it (5 min.) - Solution:
+[RIQ] 194. How do you find an element if more than one elements share the same id? (3 min.) - Solution:
+[RIQ] 195. When you look back, is there anything that you wanted to change in your current project? (5 min.) - Solution:
+[RIQ] 196. What is your achievement that you like in your current project? (5 min.) - Solution:
+[RIQ] 197. Is there anything that you’re proud of yourself during your x-year experience? (3 min.) - Solution:
+[RIQ] 198. Do you think mobile testing is challenging? (3 min.) - Solution:
+[RIQ] 199. Tell me about your framework (5 min.) - Solution:
+[RIQ] 200. How to handle pop-ups and iframes in Selenium (3 min.) - Solution:
+[RIQ] 201. What kind of test cases to automate (3 min.) - Solution:
+[RIQ] 202. how much manual, how much automation do you perform (2 min.) - Solution:
+[RIQ] 203. how do you handle invisible/ hidden elements in Selenium (3 min.) - Solution:
+[RIQ] 204. What are the challenges you are facing in your framework (5 min.) - Solution:
+[RIQ] 205. What is your team structure (3 min.) - Solution:
+[RIQ] 206. How do you use Jenkins (3 min.) - Solution:
+[RIQ] 207. What is your branching strategy in Github (3 min.) - Solution:
+[RIQ] 208. How to delete a branch using the git command (3 min.) - Solution:
+[RIQ] 209. how we can write an effective bug report? (5 min.) - Solution:
+[RIQ] 210. Imagine that developer (for some reason) changed all id's on a page and you have 1000 test cases (100 web-elements) related to this page. How you'll fix that? (5 min.) - Solution:
+[RIQ] 211. Imagine if you have an API test case that is data-driven (id) and after you pushed the test case to GitHub -> Jenkins - it shows 503 status code. Why? Where do you see the status code? (5 min.) - Solution:
+[RIQ] 212. Imagine if you want to do performance testing on an AWS server, but you don't want to expand the server(to save the many). What can you do to prevent more than 10 threads? (5 min.) - Solution:
+[RIQ] 213. What kind of details do you want to include in the bug report? (3 min.) - Solution:
+[RIQ] 214. What is BDD/TDD/KDD? Why we need it? Is the BDD at the same time as the KDD? (5 min.) - Solution:
+[RIQ] 215. SQL Joins, Minus, Plus, Union (5 min.) - Solution:
+[RIQ] 216. Why are you using cucumber BDD? (3 min.) - Solution:
+[RIQ] 217. Tell me about exceptions you get while using selenium web driver (3 min.) - Solution:
+[RIQ] 218. Why are you getting No such element found exception? (3 min.) - Solution:
+[RIQ] 219. Do you know SOAP API? (3 min.) - Solution:
+[RIQ] 220. How do you verify restful API responses? (3 min.) - Solution:
+[RIQ] 221. Which tools are you using for API testing? (2 min.) - Solution:
+[RIQ] 222. How do you make assertions while doing API testing? Which assertion dependency are you using for that? (3 min.) - Solution:
+[RIQ] 223. How do you write restful API in JUnit 5? Where you write headers, request type, headers, query parameters, and respond validations? (3 min.) - Solution:
+[RIQ] 224. Tell me about HTTP request that you’re using while doing API testing and what do you get a status code? (3 min.) - Solution:
+[RIQ] 225. write a method that returns 1st non repeated character in a string. (5 min.) - Solution:
+[RIQ] 226. write a method that accepts an array and sorts it and returns the smallest value. (5 min.) - Solution:
+[RIQ] 227. write a method accepting 2 int arrays and joins them in a new string and returns ascending order. (5 min.) - Solution:
+[RIQ] 228. what do you do when you’re conflicted with your co-worker? (3 min.) - Solution:
+[RIQ] 229. What is your greatest strength and weakness? (3 min.) - Solution:
+[RIQ] 230. Tell me about your last project responsibility (3 min.) - Solution:
+[RIQ] 231. What tools are you using for backend and frontend testing? (3 min.) - Solution:
+[RIQ] 232. Are you familiar with API? (3 min.) - Solution:
+[RIQ] 233. How are you using API in your current project? (3 min.) - Solution:
+[RIQ] 234. Did you work with the Microservices application? (3 min.) - Solution:
+[RIQ] 235. Walk me through your framework. (5 min.) - Solution:
+[RIQ] 236. Describe me BDD concept and how you achieve it in your current project. (3 min.) - Solution:
+[RIQ] 237. Tell me about JSON format. (3 min.) - Solution:
+[RIQ] 238. What kind of Database are you using? (3 min.) - Solution:
+[RIQ] 239. Who in your project writing SQL Quires? (3 min.) - Solution:
+[RIQ] 240. Describe me Left Outer Join (3 min.) - Solution:
+[RIQ] 241. What manual tools are you using for backend testing? (3 min.) - Solution:
+[RIQ] 242. How many Test Cases in your Regression suit. (2 min.) - Solution:
+[RIQ] 243. Relations between my team and stakeholders (3 min.) - Solution:
+[RIQ] 244. Tell me about your scrum ceremonies (3 min.) - Solution:
+[RIQ] 245. What your plan for the next 5years (3 min.) - Solution:
+[RIQ] 246. What can you bring to the company? (3 min.) - Solution:
+[RIQ] 247. Can you learn new tools without coaching? (2 min.) - Solution:
+[RIQ] 248. Tell me about the OOP concept and how did you apply it to your project? (5 min.) - Solution:
+[RIQ] 249. What are the differences between Method Overloading and Method Overriding? Where did you use it? (3 min.) - Solution:
+[RIQ] 250. What are the differences between Abstract and Interface? Where did you use it? (3 min.) - Solution:
+[RIQ] 251. Can we do multi-Inheritance? If yes, How? (3 min.) - Solution:
+[RIQ] 252. What are the differences between Throw and Throws keywords? (2 min.) - Solution:
+[RIQ] 253. How do you handle exceptions in Java? (3 min.) - Solution:
+[RIQ] 254. Tell me the differences between Final, Finally, Finalize Keyword? (2 min.) - Solution:
+[RIQ] 255. Tell me the differences between Array and ArrayList? (2 min.) - Solution:
+[RIQ] 256. Tell me the differences between HashMap and LinkedHashMap? (2 min.) - Solution:
+[RIQ] 257. Tell me the differences between Static and Instance Variable/Block? (2 min.) - Solution:
+[RIQ] 258. Is it necessary that each try block must be followed by a catch block? (2 min.) - Solution:
+[RIQ] 259. How do you iterate over the Map? Get me key and value?   -> Coding (3 min.) - Solution:
+[RIQ] 260. How do you handle dynamic elements in Selenium? (2 min.) - Solution:
+[RIQ] 261. What are the different locators in Selenium? (2 min.) - Solution:
+[RIQ] 262. What is your favorite locator? And Why? (2 min.) - Solution:
+[RIQ] 263. How do you handle dynamic tables? (2 min.) - Solution:
+[RIQ] 264. What is Iframe and How do you deal with it? (2 min.) - Solution:
+[RIQ] 265. What do you use for scrolling if the Action class does not work? (2 min.) - Solution:
+[RIQ] 266. Do you use JavaScriptExecuter? Where do you use it? (3 min.) - Solution:
+[RIQ] 267. Tell me the differences between Implicit/ Explicit/ Fluent Wait? (3 min.) - Solution:
+[RIQ] 268. How do you do cross-browsing testing? (2 min.) - Solution:
+[RIQ] 269. How do you use Selenium Grid in your current project? (2 min.) - Solution:
+[RIQ] 270. Tell me about your Project? (2 min.) - Solution:
+[RIQ] 271. What is Gherkin Language? (2 min.) - Solution:
+[RIQ] 272. What do @Cucumber Options do? Tell me what you have inside? (2 min.) - Solution:
+[RIQ] 273. What is Background? Why you use it? (2 min.) - Solution:
+[RIQ] 274. What is Hooks? Why you use it? (2 min.) - Solution:
+[RIQ] 275. What are the differences between Background and Hooks? (2 min.) - Solution:
+[RIQ] 276. What is DataTable in Cucumber? (2 min.) - Solution:
+[RIQ] 277. What is a Scenario Outline? (2 min.) - Solution:
+[RIQ] 276. What is Data-Driven Testing? (2 min.) - Solution:
+[RIQ] 277. How do you run ONLY failed Tests? (2 min.) - Solution:
+[RIQ] 278. What reports do you generate in Cucumber? (2 min.) - Solution:
+[RIQ] 279. How do you run only certain group features and certain tests? (2 min.) - Solution:
+[RIQ] 280. How do you config your Jenkins? (3 min.) - Solution:
+[RIQ] 281. How do you Schedule in Jenkins? (3 min.) - Solution:
+[RIQ] 282. Where is your code running while Jenkins pulls the code from Git? (3 min.) - Solution:
+[RIQ] 283. When you get an endpoint from the Developer, What is the process you would take to validate the end-point? (5 min.) - Solution:
+[RIQ] 284. What are the different methods do you use in API? (3 min.) - Solution:
+[RIQ] 285. Tell me about Post Request? (3 min.) - Solution:
+[RIQ] 286. How to get the second max value in a table? (2 min.) - Solution:
+[RIQ] 287. Truncate a table? (2 min.) - Solution:
+[RIQ] 288. If a query is running and is taking a lot of time, what is the solution? (3 min.) - Solution:
+[RIQ] 289. How to check if the master branch has your commit in git? (2 min.) - Solution:
+[RIQ] 290. Have you worked with CI/CD pipeline tools like Jenkins? (2 min.) - Solution:
+[RIQ] 291. Any experience in using AWS? (3 min.) - Solution:
+[RIQ] 292. How to validate data from AWS to external tables? (3 min.) - Solution:
+[RIQ] 293. How do know which test cases can be automated? (3 min.) - Solution:
+[RIQ] 294. Any test case tool used?? (2 min.) - Solution:
+[RIQ] 295. How do you produce the automation test result? (3 min.) - Solution:
+[RIQ] 296. A time when a task was challenging how did you manage it? (5 min.) - Solution:
+[RIQ] 297. When something went not as planned how did you handle it? (5 min.) - Solution:
+[RIQ] 298. Can you walk us through your experiences about your Selenium, Cucumber, and Junit? (5 min.) - Solution:
+[RIQ] 299. What is your test strategy (overall)? (5 min.) - Solution:
+[RIQ] 300. What are JUnit annotations? (3 min.) - Solution:
+[RIQ] 301. Let’s say You have 1000 words of text and if I ask you to count how many times those 3 statements such as “the wrong message”, “error message”, “incomplete message” appear inside that text? (5 min.) - Solution:
+[RIQ] 302. Which one to use in order to preserve the order? (Asking about the interface implementation here) (5 min.) - Solution:
+[RIQ] 303. You have two string values, how do you compare them? (3 min.) - Solution:
+[RIQ] 304. If there are two matching values, how do you differentiate them? (HTML) (3 min.) - Solution:
+[RIQ] 305. How do you retrieve the max salary in a department  from two separate tables (including the employee)? (3 min.) - Solution:
+[RIQ] 306. From a dropdown, how do you verify and validate the element is the correct one? (3 min.) - Solution:
+[RIQ] 307. How do you compare two values from different data structures? (3 min.) - Solution:
+[RIQ] 308. What were the challenges in your experience? (3 min.) - Solution:
+[RIQ] 309. How long is your sprint? (1 min.) - Solution:
+[RIQ] 310. How do you use Parameterization in cucumber? (3 min.) - Solution:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
