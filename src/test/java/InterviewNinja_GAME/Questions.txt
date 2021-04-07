@@ -275,14 +275,12 @@
 [RIQ] 275. What are the differences between Background and Hooks? (2 min.) - Solution:
 [RIQ] 276. What is DataTable in Cucumber? (2 min.) - Solution:
 [RIQ] 277. What is a Scenario Outline? (2 min.) - Solution:
-[RIQ] 276. What is Data-Driven Testing? (2 min.) - Solution:
-[RIQ] 277. How do you run ONLY failed Tests? (2 min.) - Solution:
-[RIQ] 278. What reports do you generate in Cucumber? (2 min.) - Solution:
-[RIQ] 279. How do you run only certain group features and certain tests? (2 min.) - Solution:
-[RIQ] 280. How do you config your Jenkins? (3 min.) - Solution:
-[RIQ] 281. How do you Schedule in Jenkins? (3 min.) - Solution:
-[RIQ] 282. Where is your code running while Jenkins pulls the code from Git? (3 min.) - Solution:
-[RIQ] 283. When you get an endpoint from the Developer, What is the process you would take to validate the end-point? (5 min.) - Solution:
+[RIQ] 278. What is Data-Driven Testing? (2 min.) - Solution:
+[RIQ] 279. How do you run ONLY failed Tests? (2 min.) - Solution:
+[RIQ] 280. What reports do you generate in Cucumber? (2 min.) - Solution:
+[RIQ] 281. How do you run only certain group features and certain tests? (2 min.) - Solution:
+[RIQ] 282. How do you config your Jenkins? (3 min.) - Solution:
+[RIQ] 283. How do you Schedule in Jenkins? (3 min.) - Solution:
 [RIQ] 284. What are the different methods do you use in API? (3 min.) - Solution:
 [RIQ] 285. Tell me about Post Request? (3 min.) - Solution:
 [RIQ] 286. How to get the second max value in a table? (2 min.) - Solution:
@@ -310,6 +308,44 @@
 [RIQ] 308. What were the challenges in your experience? (3 min.) - Solution:
 [RIQ] 309. How long is your sprint? (1 min.) - Solution:
 [RIQ] 310. How do you use Parameterization in cucumber? (3 min.) - Solution:
+[RIQ] 311. Where is your code running while Jenkins pulls the code from Git? (3 min.) - Solution:
+[RIQ] 312. When you get an endpoint from the Developer, What is the process you would take to validate the end-point? (5 min.) - Solution:
+[RIQ] 313. Tell me about your Selenium framework. (3 min.) - Solution:
+[RIQ] 314. What are JUnit annotations? (2 min.) - Solution:
+[RIQ] 315. What is the use of Selenium Grid? (3 min.) - Solution:
+[RIQ] 316. API Testing in general? (3 min.) - Solution:
+[RIQ] 317. What is the difference between Header and Body? (3 min.) - Solution:
+[RIQ] 318. How do you accomplish parallel execution in a selenium grid? (3 min.) - Solution:
+[RIQ] 319. How do you use Collection in API testing? (3 min.) - Solution:
+[RIQ] 320. Rate your Java skills. (1 min.) - Solution:
+[RIQ] 321. What do you use for mobile testing? Explain (3 min.) - Solution:
+[RIQ] 322. Talk about the RestAssured Library in your automation. (3 min.) - Solution:
+[RIQ] 323. Do you use cloud or local machines for parallel testing? (3 min.) - Solution:
+[RIQ] 324. What is the implicit and explicit wait? (2 min.) - Solution:
+[RIQ] 325. How do you use implicit wait? (2 min.) - Solution:
+[RIQ] 326. Brief your past experience (5 min.) - Solution:
+[RIQ] 327. Should Page object not be used in Step definition?   (2 min.) - Solution:
+[RIQ] 328. Why will you do automation testing?  (3 min.) - Solution:
+[RIQ] 329. What are the goals of usability testing?  (3 min.) - Solution:
+[RIQ] 330. Types of requirements? (3 min.) - Solution:
+[RIQ] 331. Given an array of integers, write a function to return the index of an item in the array, where the sum of all items on its left is equal to the sum of the ones on the right.  For example : Given [4, 9, 1, 3, 6, 4] your function should return 2 because the item at index 2 is 1, and 4+9 =3+6+4 (5 min.) - Solution:
+[RIQ] 332. Why do you want to leave your current job?  (3 min.) - Solution:
+[RIQ] 333. Do you perform manual testing on your current project? (3 min.) - Solution:
+[RIQ] 334. Which tools are you using to perform  API  testing? (2 min.) - Solution:
+[RIQ] 335. How do you handle synchronization issues? (3 min.) - Solution:
+[RIQ] 336. How do you handle Alert? (3 min.) - Solution:
+[RIQ] 337. Which locator I prefer and why? (3 min.) - Solution:
+[RIQ] 338. How do you order your test using JUnit? (3 min.) - Solution:
+[RIQ] 339. About test plan and test strategy (3 min.) - Solution:
+[RIQ] 340. My role in a sprint planning meeting (3 min.) - Solution:
+[RIQ] 341. What is the length of the EMPTY and null string? (2 min.) - Solution:
+[RIQ] 341. Challenges I face while doing API Testing (3 min.) - Solution:
+[RIQ] 343. Tell me a story when you decide something and you regret your decision? (5 min.) - Solution:
+[RIQ] 344. Write a SQL Query to find employees with high salaries from the project “inter” in the “Chicago” state. (5 min.) - Solution:
+[RIQ] 345. Write a SQL Query to find projects with low-budget projects running outside the united states country. (5 min.) - Solution:
+[RIQ] 346. How do you find if the ArrayList contains duplicates or not? (3 min.) - Solution:
+
+
 
 
 
